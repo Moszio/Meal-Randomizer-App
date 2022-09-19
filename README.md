@@ -1,5 +1,29 @@
 # README
 
+## bundle install
+## npm install --prefix client
+## gem install foreman
+
+Use foreman to launch rails and react in same window:
+## foreman start -f Procfile.dev
+
+If want to start seperate windows:
+Rails:
+## rails s
+React:
+## npm start
+
+
+
+## npm install react-router-dom@6
+
+
+
+
+
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
