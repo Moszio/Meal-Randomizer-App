@@ -18,4 +18,6 @@ puts "Seeding Started"
 user_1 = User.create(id: 1, username: "Andor")
 user_2 = User.create(id: 2, username: "Bob")
 
+
+
 puts "Done Seeding"
