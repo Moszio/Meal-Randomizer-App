@@ -1,22 +1,22 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 
 
 const Login = ({ onLogin }) => {
 
-    const [username, setUsername] = useState(null)
+    const [username, setUsername] = useState("")
 
-    const handleSubmitLogin = async () => {
+    const handleSubmitLogin = async (e) => {
         e.preventDefault()
-        let request = await fetch("url", {
+        let request = await fetch("http://localhost:3000/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({username})
+            body: JSON.stringify({ username })
         })
         let response = await request.json()
-        console.log(response)
+        onLogin(response)
     }
 
 
@@ -36,6 +36,7 @@ const Login = ({ onLogin }) => {
                 <br />
                 {/* <label>Password</label><br />
                 <input type="text" name="password" placeholder="password"/><br /> */}
+                <input type="submit" />
             </form>
         </div>
     )

@@ -14,16 +14,26 @@ function App() {
   const [user, setUser] = useState(null)
 
 
-  const fetchUrl = async () => {
-    const request = await fetch("url")
-    const response = await request.json()
-    setUser(response)
-  }
 
-  useEffect(() => {
-    fetchUrl()
-  }, [])
 
+   useEffect(() => {
+    fetch("http://localhost:3000/me")
+    .then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+  // const fetchUrl = async () => {
+  //   const request = await fetch("url")
+  //   const response = await request.json()
+  //   setUser(response)
+  // }
+
+  // useEffect(() => {
+  //   fetchUrl()
+  // }, [])
 
 
   return (

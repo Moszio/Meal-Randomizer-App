@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   post "/login", to: "sessions#create"
-  get "/me", to: "users#show"
+  get "/me", to: "user#show"
+  get "/users", to: "user#index"
 end
