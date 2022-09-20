@@ -24,7 +24,6 @@ function App() {
       }
     });
   }, []);
-
   // const fetchUrl = async () => {
   //   const request = await fetch("url")
   //   const response = await request.json()
@@ -36,21 +35,29 @@ function App() {
   // }, [])
 
 
+  const handleLoginUser = () => {
+    setUser(user)
+  }
+
+
+
+
+
   return (
     <div>
       <Navbar/>
       <Switch>
-        <Route exact path="/">
-          <HomePage></HomePage>
-        </Route>
         <Route exact path="/login">
-          <Login onLogin={setUser}></Login>
+          <Login onLogin={handleLoginUser} user={user}></Login>
         </Route>
         <Route exact path="/signup">
           <SignUp></SignUp>
         </Route>
         <Route exact path="/rewards">
           <Rewards></Rewards>
+        </Route>
+        <Route exact path="/">
+          <HomePage></HomePage>
         </Route>
       </Switch>
     </div>

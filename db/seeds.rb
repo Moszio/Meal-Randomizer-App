@@ -14,10 +14,10 @@ Reward.destroy_all
 
 puts "Seeding Started"
 
+5.times do
+user = User.create(username: "Andor")
 
-user_1 = User.create(id: 1, username: "Andor")
-user_2 = User.create(id: 2, username: "Bob")
-
+end
 
 
 puts "Done Seeding"
