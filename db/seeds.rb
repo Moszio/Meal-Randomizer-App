@@ -19,5 +19,19 @@ user = User.create(username: "Andor")
 
 end
 
+puts "Seeding Rewards!"
+reward_1 = Reward.create(name: "Phone", category: "electronics", cost: 100, image: "https://images.unsplash.com/photo-1580910051074-3eb694886505?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBob25lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60")
+reward_2 = Reward.create(name: "Laptop", category: "electronics", cost: 200, image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80")
+reward_3 = Reward.create(name: "Monalisa", category: "art", cost: 50000, image: "https://images.unsplash.com/photo-1569335529517-278a45cfcb53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80")
+reward_4 = Reward.create(name: "Trip", category: "travel", cost: 100, image: "https://images.unsplash.com/photo-1594671515324-ea48fea744d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbmUlMjB0aWNrZXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60")
+reward_5 = Reward.create(name: "Voucher", category: "restaurants", cost: 10, image: "https://images.unsplash.com/photo-1526614180703-827d23e7c8f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dm91Y2hlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+reward_6 = Reward.create(name: "Voucher", category: "restaurants", cost: 10, image: "https://images.unsplash.com/photo-1526614180703-827d23e7c8f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dm91Y2hlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+reward_7 = Reward.create(name: "Voucher", category: "restaurants", cost: 10, image: "https://images.unsplash.com/photo-1526614180703-827d23e7c8f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dm91Y2hlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+
+#     t.string "name"
+#     t.string "category"
+#     t.integer "cost"
+#     t.string "image"
+
 
 puts "Done Seeding"

@@ -2,10 +2,10 @@ import { useState } from "react"
 
 
 
-const Login = ({ onLogin, user }) => {
-
-    const [username, setUsername] = useState("");
-
+const Login = ({ /*onLogin, user*/ }) => {
+///////////////////////* THIS SECTION IS FOR VALIDATION *//////////////////////////////
+    // const [username, setUsername] = useState("");
+///////////////////////* THIS SECTION IS FOR VALIDATION *//////////////////////////////
     // const handleSubmitLogin = async (e) => {
     //     e.preventDefault()
     //     let request = await fetch("http://localhost:3000/users", {
@@ -18,24 +18,22 @@ const Login = ({ onLogin, user }) => {
     //     let response = await request.json()
     //     onLogin(response)
     // }
-
-    const handleSubmit = (e) => {
-    e.preventDefault();
-    fetch("http://localhost:4000/login", {
-      method: "POST",
-      headers: {    
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => onLogin(user));
-      }
-    });
-  }
-
-  
-
+///////////////////////* THIS SECTION IS FOR VALIDATION *//////////////////////////////
+  //   const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   fetch("http://localhost:4000/login", {
+  //     method: "POST",
+  //     headers: {    
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ username }),
+  //   }).then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => onLogin(user));
+  //     }
+  //   });
+  // }
+///////////////////////* THIS SECTION IS FOR VALIDATION *//////////////////////////////
   // function handleLogout() {
   //   fetch("/http://localhost:3000/logout", {
   //     method: "DELETE",
@@ -50,8 +48,10 @@ const Login = ({ onLogin, user }) => {
                 <input 
                 type="text" 
                 id="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                ///////////////////////* THIS SECTION IS FOR VALIDATION *//////////////////////////////
+                /*value={username}
+                onChange={(e) => setUsername(e.target.value)}*/
+                ///////////////////////////////////////////////////////////////////////////////
                 />
                 <br />
                 {/* <label>Password</label><br />
