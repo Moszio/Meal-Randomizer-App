@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  menu: MyString
+  image: MyString
+  outdoor_seating: false
+  reviews: MyText
+  price_range: MyString
+
+two:
+  name: MyString
+  menu: MyString
+  image: MyString
+  outdoor_seating: false
+  reviews: MyText
+  price_range: MyString
