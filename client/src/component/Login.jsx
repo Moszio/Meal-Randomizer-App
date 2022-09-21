@@ -1,8 +1,8 @@
-import { useState } from "react"
+// import { useState } from "react"
 
 
 
-const Login = ({ /*onLogin, user*/ }) => {
+const Login = () => {
 ///////////////////////* THIS SECTION IS FOR VALIDATION *//////////////////////////////
     // const [username, setUsername] = useState("");
 ///////////////////////* THIS SECTION IS FOR VALIDATION *//////////////////////////////
@@ -43,7 +43,7 @@ const Login = ({ /*onLogin, user*/ }) => {
 
     return (
         <div className="login-page">
-            <form onSubmit={handleSubmit} >
+            <form  >
                 <label>Username</label><br />
                 <input 
                 type="text" 
@@ -58,7 +58,7 @@ const Login = ({ /*onLogin, user*/ }) => {
                 <input type="text" name="password" placeholder="password"/><br /> */}
                 <button type="submit">Login</button>
             </form>
-            <h1>Welcome! {user}</h1>
+            <h1>Welcome!</h1>
           
         </div>
     )

@@ -1,14 +1,21 @@
 
-import './style/App.css';
+import './component/App.css';
 import { Route, Switch } from 'react-router-dom';
-import Login from './Login';
-import HomePage from './HomePage';
-import SignUp from './SignUp';
-import Navbar from './Navbar';
-import Rewards from './Rewards';
+import Login from './component/Login';
+import HomePage from './component/HomePage';
+import SignUp from './component/SignUp';
+import Navbar from './component/Navbar';
+import Rewards from './component/Rewards';
+import { useSelector, useDispatch } from 'react-redux';
 // import { useEffect,useState } from 'react';
 
 function App() {
+
+  const counter = useSelector(state => state.counter)
+  const isLogged = useSelector(state => state.isLogged)
+
+
+
 
 ///////////////////////* THIS SECTION IS FOR VALIDATION *//////////////////////////////
   // const [user, setUser] = useState(null)
@@ -44,7 +51,8 @@ function App() {
       <Navbar/>
       <Switch>
         <Route exact path="/login">
-          <Login onLogin={handleLoginUser} user={user}></Login>
+          {/* <Login onLogin={handleLoginUser} user={user}></Login> */}
+          <Login></Login>
         </Route>
         <Route exact path="/signup">
           <SignUp></SignUp>
