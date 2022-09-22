@@ -1,18 +1,19 @@
 
+import Login from './component/Login.jsx';
+import HomePage from './component/HomePage.jsx';
+import SignUp from './component/SignUp.jsx';
+import Navbar from './component/Navbar.jsx';
+import Rewards from './component/Rewards.jsx';
 import './component/App.css';
 import { Route, Switch } from 'react-router-dom';
-import Login from './component/Login';
-import HomePage from './component/HomePage';
-import SignUp from './component/SignUp';
-import Navbar from './component/Navbar';
-import Rewards from './component/Rewards';
-import { useSelector, useDispatch } from 'react-redux';
+import Map from './component/Map/Map.jsx';
+// import { useSelector, useDispatch } from 'react-redux';
 // import { useEffect,useState } from 'react';
 
 function App() {
 
-  const counter = useSelector(state => state.counter)
-  const isLogged = useSelector(state => state.isLogged)
+  // const counter = useSelector(state => state.counter)
+  // const isLogged = useSelector(state => state.isLogged)
 
 
 
