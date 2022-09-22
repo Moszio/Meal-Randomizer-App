@@ -6,7 +6,7 @@ import Navbar from './component/Navbar.jsx';
 import Rewards from './component/Rewards.jsx';
 import './component/App.css';
 import { Route, Switch } from 'react-router-dom';
-import Map from './component/Map/Map.jsx';
+
 // import { useSelector, useDispatch } from 'react-redux';
 // import { useEffect,useState } from 'react';
 
@@ -14,8 +14,6 @@ function App() {
 
   // const counter = useSelector(state => state.counter)
   // const isLogged = useSelector(state => state.isLogged)
-
-
 
 
 ///////////////////////* THIS SECTION IS FOR VALIDATION *//////////////////////////////
