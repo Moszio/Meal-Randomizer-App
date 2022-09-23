@@ -1,14 +1,17 @@
 import GoogleMapReact from 'google-map-react'
+import config from '../../config'
+
+const Map = ({ setCoordinates, setBounds, coordinates }) => {
 
 
-const Map = ({ setCoordinates, setBounds }) => {
+    const key = config.MY_API_TOKEN
+    // const coordinates = { lat: 40.73390079999999, lng: -74.0425728 }
 
-    const coordinates = { lat: 40.73390079999999, lng: -74.0425728 }
     return (
     <div>
         <div style={{width: "300px", height:"300px"}}>
         <GoogleMapReact 
-            // bootstrapURLKeys = {{ key: 'AIzaSyDsSRgdgri-u7bmT43bJL21NY9kzySF7iY' }}
+            bootstrapURLKeys = {{ key: `${key}` }}
             defaultCenter={coordinates}
             center={coordinates}
             defaultZoom={14}
