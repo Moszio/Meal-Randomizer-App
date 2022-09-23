@@ -2,4 +2,23 @@
 
 .details-container{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.rest-image img{
+    width: 300px;
+    height: 300px;
+}
+
+.description-container{
+    text-align: center;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 0 2rem 0;
+}
+.description-container button{
+
 }

@@ -50,7 +50,6 @@ function App() {
       <Navbar/>
       <Switch>
         <Route exact path="/login">
-          {/* <Login onLogin={handleLoginUser} user={user}></Login> */}
           <Login></Login>
         </Route>
         <Route exact path="/signup">
