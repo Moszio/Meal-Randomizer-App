@@ -1,4 +1,3 @@
-import Map from './Map/Map'
 import { useEffect, useState } from 'react'
 import getPlacesData from '../api/index.js'
 import Card from './Restaurant/Card'
@@ -9,7 +8,7 @@ const HomePage = () => {
   // const [places, setPlaces] = useState([{name :"place1"}, {name: "place2"}])
   const [places, setPlaces] = useState([])
   const [coordinates, setCoordinates] = useState({})
-  const [bounds, setBounds] = useState({})
+  //   const [bounds, setBounds] = useState({})
   const [randomNumber, setRandomNumber] = useState(0)
   const [collapse, setCollapse] = useState(false)
 
@@ -58,8 +57,8 @@ const HomePage = () => {
     setCollapse(!collapse)
   }
 
-  console.log(collapse)
-  console.log(randomNumber)
+  //   console.log(collapse)
+  //   console.log(randomNumber)
   return (
     <div className='home-page'>
       <h1>{places?.[randomNumber]?.name}</h1>
@@ -69,7 +68,7 @@ const HomePage = () => {
       {collapse ? (
         <Details
           setCoordinates={setCoordinates}
-          setBounds={setBounds}
+          //   setBounds={setBounds}
           coordinates={coordinates}
           handleCollapse={handleCollapseForCardAndDetails}
           handleGetPlacesChange={handleGetPlacesChange}

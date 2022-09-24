@@ -3,8 +3,8 @@ import Map from '../Map/Map'
 import './style.css'
 
 const Details = ({
-  setCoordinates,
-  setBounds,
+  // setCoordinates,
+  // setBounds,
   coordinates,
   places,
   handleCollapse,
@@ -19,8 +19,8 @@ const Details = ({
         {/* <div className='rest-image'><img src={image} alt="restaurant"/></div> */}
         <div className='map'>
           <Map
-            setCoordinates={setCoordinates}
-            setBounds={setBounds}
+            // setCoordinates={setCoordinates}
+            // setBounds={setBounds}
             coordinates={coordinates}
             handleGetPlacesChange={handleGetPlacesChange}
           />
