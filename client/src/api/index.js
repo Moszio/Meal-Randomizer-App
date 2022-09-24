@@ -1,11 +1,11 @@
 import axios from "axios";
 import config from "../config";
 
-const URL = 'https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary'
-const token = config.SECRET_API_KEY
+const urlKey = config.SECRET_URL
 const tokenKey = config.SECRET_API_KEY_KEY
-const host = config.SECRET_HOST_KEY
 const hostKey = config.SECRET_HOST_KEY_KEY
+
+const URL = `${urlKey}`
 
 const getPlacesData = async (sw, ne) => {
   try {
@@ -15,6 +15,10 @@ const getPlacesData = async (sw, ne) => {
     tr_latitude: ne.lat,
     bl_longitude: sw.lng,
     tr_longitude: ne.lng,
+    // bl_latitude: 40.72414437513456,
+    // tr_latitude: 40.74989637911287,
+    // bl_longitude: -74.05544740327149,
+    // tr_longitude: -74.03034159672852,
   },
   headers: {
     'X-RapidAPI-Key': `${tokenKey}`,
