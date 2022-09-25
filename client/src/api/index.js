@@ -5,7 +5,7 @@ const urlKey = config.SECRET_URL
 const tokenKey = config.SECRET_API_KEY_KEY
 const hostKey = config.SECRET_HOST_KEY_KEY
 
-const URL = `${urlKey}`
+// const URL = `${urlKey}`
 
 const getPlacesData = async (sw, ne) => {
   try {
@@ -23,8 +23,8 @@ const getPlacesData = async (sw, ne) => {
         // tr_longitude: -74.03034159672852,
       },
       headers: {
-        'X-RapidAPI-Key': `${tokenKey}`,
-        'X-RapidAPI-Host': `${hostKey}`,
+        // 'X-RapidAPI-Key': `${tokenKey}`,
+        // 'X-RapidAPI-Host': `${hostKey}`,
       },
     })
     return data

@@ -1,0 +1,30 @@
+.rewards-page {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.rewards-container {
+  display: flex;
+  align-content: space-around;
+  flex-wrap: wrap;
+  width: calc();
+  margin-inline: auto;
+  /* background-color: aqua; */
+  gap: 20px;
+}
+
+.reward-card {
+  width: 300px;
+  height: 300px;
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow-1);
+  text-align: center;
+  border-radius: 5px;
+  width: min(100% - 2rem, 300px);
+  margin-inline: auto;
+}
+
+.reward-card img {
+  height: 100px;
+}
