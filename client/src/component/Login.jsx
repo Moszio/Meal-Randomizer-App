@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const Login = ({ onLogin, user }) => {
+const Login = ({ onLogin, user, onLogout }) => {
   const [username, setUsername] = useState('')
 
   const handleSubmit = (e) => {
@@ -18,11 +18,13 @@ const Login = ({ onLogin, user }) => {
     })
   }
   ///////////////////////* THIS SECTION IS FOR VALIDATION *//////////////////////////////
-  // function handleLogout() {
-  //   fetch("/http://localhost:3000/logout", {
-  //     method: "DELETE",
-  //   }).then(() => onLogout());
-  // }
+  const handleLogout = () => {
+    fetch('/logout', {
+      method: 'DELETE',
+    }).then(() => onLogout())
+  }
+
+  console.log('username', username)
 
   return (
     <div className='login-page'>
@@ -41,8 +43,8 @@ const Login = ({ onLogin, user }) => {
                 <input type="text" name="password" placeholder="password"/><br /> */}
         <button type='submit'>Login</button>
       </form>
-
-      {user.username ? <h1> Welcome {user.username}</h1> : null}
+      <button onClick={handleLogout}>Logout</button>
+      {user ? <h1> Welcome {user.username}</h1> : null}
     </div>
   )
 }

@@ -32,7 +32,7 @@ function App() {
           <Login onLogin={setUser} user={user}></Login>
         </Route>
         <Route exact path='/signup'>
-          <SignUp></SignUp>
+          <SignUp onLogin={setUser}></SignUp>
         </Route>
         <Route exact path='/rewards'>
           <Rewards></Rewards>
