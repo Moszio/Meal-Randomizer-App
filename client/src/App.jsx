@@ -29,7 +29,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path='/login'>
-          <Login onLogin={setUser} user={user}></Login>
+          <Login onLogin={setUser} user={user} onLogout={setUser}></Login>
         </Route>
         <Route exact path='/signup'>
           <SignUp onLogin={setUser}></SignUp>

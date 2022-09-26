@@ -52,7 +52,7 @@ const SignUp = () => {
           onChange={(e) => setPasswordConfirmation(e.target.value)}
         />
         <br />
-        <button type='submit'>Login</button>
+        <button type='submit'>Create Account</button>
       </form>
     </div>
   )

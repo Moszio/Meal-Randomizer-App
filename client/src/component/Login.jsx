@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 const Login = ({ onLogin, user, onLogout }) => {
   const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -10,18 +11,18 @@ const Login = ({ onLogin, user, onLogout }) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username }),
+      body: JSON.stringify({ username, password }),
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => onLogin(user))
       }
     })
   }
-  ///////////////////////* THIS SECTION IS FOR VALIDATION *//////////////////////////////
+
   const handleLogout = () => {
     fetch('/logout', {
       method: 'DELETE',
-    }).then(() => onLogout())
+    }).then(() => onLogout({}))
   }
 
   console.log('username', username)
@@ -34,13 +35,21 @@ const Login = ({ onLogin, user, onLogout }) => {
         <input
           type='text'
           id='username'
+          autoComplete='off'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          ///////////////////////////////////////////////////////////////////////////////
         />
         <br />
-        {/* <label>Password</label><br />
-                <input type="text" name="password" placeholder="password"/><br /> */}
+        <label>Password</label>
+        <br />
+        <input
+          type='password'
+          id='password'
+          autoComplete='current-password'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
         <button type='submit'>Login</button>
       </form>
       <button onClick={handleLogout}>Logout</button>
