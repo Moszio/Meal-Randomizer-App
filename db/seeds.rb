@@ -14,10 +14,13 @@ Reward.destroy_all
 
 puts "Seeding Started"
 
-5.times do
-user = User.create(username: "Andor")
 
-end
+user1 = User.create(username: "Andor")
+user2 = User.create(username: "Bob")
+user3 = User.create(username: "John")
+user4 = User.create(username: "Greg")
+user5 = User.create(username: "Tod")
+
 
 puts "Points Seeding Started"
 

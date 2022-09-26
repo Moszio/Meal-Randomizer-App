@@ -8,18 +8,28 @@ import './component/App.css'
 import { Route, Switch } from 'react-router-dom'
 
 // import { useSelector, useDispatch } from 'react-redux';
-// import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react'
 
 function App() {
   // const counter = useSelector(state => state.counter)
   // const isLogged = useSelector(state => state.isLogged)
+
+  const [user, setUser] = useState({})
+
+  useEffect(() => {
+    fetch('/me').then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user))
+      }
+    })
+  }, [])
 
   return (
     <div>
       <Navbar />
       <Switch>
         <Route exact path='/login'>
-          <Login></Login>
+          <Login onLogin={setUser} user={user}></Login>
         </Route>
         <Route exact path='/signup'>
           <SignUp></SignUp>
@@ -31,7 +41,7 @@ function App() {
           <HomePage></HomePage>
         </Route>
         <Route exact path='/profile'>
-          <Profile></Profile>
+          <Profile user={user}></Profile>
         </Route>
       </Switch>
     </div>
