@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar onLogout={setUser} user={user} />
       <Switch>
         <Route exact path='/login'>
           <Login onLogin={setUser} user={user} onLogout={setUser}></Login>

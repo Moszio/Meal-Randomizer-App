@@ -13,7 +13,7 @@ const Rewards = () => {
     fetchRewards()
   }, [])
 
-  console.log(rewards)
+  // console.log(rewards)
 
   return (
     <div className='rewards-page'>

@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({ onLogout, user }) => {
+  const handleLogout = () => {
+    fetch('/logout', {
+      method: 'DELETE',
+    }).then(() => onLogout(null))
+  }
+
   return (
     <div className='navbar-container'>
       <div className='application-name'></div>
@@ -14,13 +20,18 @@ const Navbar = () => {
         <Link to='/rewards'>
           <div>Rewards</div>
         </Link>
-        <Link to='/login'>
-          <div>Login</div>
-        </Link>
-        <Link to='/signup'>
-          <div>Signup</div>
-        </Link>
-        {/* <Link><div>About</div></Link> */}
+        {user ? (
+          <div onClick={handleLogout}>Logout</div>
+        ) : (
+          <>
+            <Link to='/login'>
+              <div>Login</div>
+            </Link>
+            <Link to='/signup'>
+              <div>Signup</div>
+            </Link>
+          </>
+        )}
       </div>
     </div>
   )

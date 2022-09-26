@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const Login = ({ onLogin, user, onLogout }) => {
+const Login = ({ onLogin, user }) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
@@ -19,13 +19,13 @@ const Login = ({ onLogin, user, onLogout }) => {
     })
   }
 
-  const handleLogout = () => {
-    fetch('/logout', {
-      method: 'DELETE',
-    }).then(() => onLogout({}))
-  }
+  //   const handleLogout = () => {
+  //     fetch('/logout', {
+  //       method: 'DELETE',
+  //     }).then(() => onLogout({}))
+  //   }
 
-  console.log('username', username)
+  //   console.log('username', username)
 
   return (
     <div className='login-page'>
@@ -52,7 +52,7 @@ const Login = ({ onLogin, user, onLogout }) => {
         <br />
         <button type='submit'>Login</button>
       </form>
-      <button onClick={handleLogout}>Logout</button>
+      {/* <button onClick={handleLogout}>Logout</button> */}
       {user ? <h1> Welcome {user.username}</h1> : null}
     </div>
   )
