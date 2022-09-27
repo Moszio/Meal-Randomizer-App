@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     def index
         user = User.all
-        render json: user
+        render json: user.to_json(except: [:created_at, :updated_at])
     end
 
     def create
@@ -21,6 +21,25 @@ class UsersController < ApplicationController
         end
     end     
 
+    def update
+        user = User.find_by!(id: params[:id])
+        if user
+            if params[:image]
+                user.image = params[:image]
+                user.save!
+            end 
+            render json: user
+        else
+            render json: {error: user.errors.full_messages}, status: 422
+        end
+    end
+
+
+    def look 
+        user = User.find_by(id: params[:id])
+        render json: user
+    end
+
      private
 
         def authorize
@@ -30,5 +49,9 @@ class UsersController < ApplicationController
         def user_params
             params.permit(:username, :password, :password_confirmation)
         end
+
+        # def ticket_params
+        #     params.permit(:theater_id, :seat_id)
+        # end
     end
 

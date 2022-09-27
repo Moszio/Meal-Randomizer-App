@@ -15,11 +15,12 @@ Reward.destroy_all
 puts "Seeding Started"
 
 
-user1 = User.create(username: "Andor", password_digest: "123")
-user2 = User.create(username: "Bob", password_digest: "asd")
-user3 = User.create(username: "John", password_digest: "123")
-user4 = User.create(username: "Greg", password_digest: '123')
-user5 = User.create(username: "Tod", password_digest: "123")
+User.create(username: "Andor", password_digest: "123", image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80")
+User.create(username: "Bob", password_digest: "asd", image: nil)
+User.create(username: "John", password_digest: "asd", image: nil)
+# user3 = User.create(username: "John", password_digest: "123")
+# user4 = User.create(username: "Greg", password_digest: '123')
+# user5 = User.create(username: "Tod", password_digest: "123")
 
 
 puts "Points Seeding Started"

@@ -24,6 +24,10 @@ function App() {
     })
   }, [])
 
+  const updateImage = (profileImage) => {
+    setUser(user.id === profileImage.id ? profileImage : user)
+  }
+
   return (
     <div>
       <Navbar onLogout={setUser} user={user} />
@@ -41,7 +45,7 @@ function App() {
           <HomePage></HomePage>
         </Route>
         <Route exact path='/profile'>
-          <Profile user={user}></Profile>
+          <Profile user={user} updateImage={updateImage}></Profile>
         </Route>
       </Switch>
     </div>

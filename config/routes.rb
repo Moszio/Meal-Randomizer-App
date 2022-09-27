@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get "/users", to: "users#index"
   get "/rewards", to: "rewards#index"
+  patch "/users/:id", to: "users#update"
+  get "/users/:id", to: "users#look"
 
 
 end
