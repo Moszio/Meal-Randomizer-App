@@ -3,5 +3,6 @@ class UserSerializer < ActiveModel::Serializer
 
 
   has_many :restaurants
+  has_many :rewards
   # has_many :restaurants, serializer: VisitationSerializer
 end

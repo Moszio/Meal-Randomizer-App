@@ -14,10 +14,11 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   get "/users", to: "users#index"
-  get "/rewards", to: "rewards#index"
   patch "/users/:id", to: "users#update"
   get "/users/:id", to: "users#look"
-
+  
   get "/restaurants", to: "restaurants#show"
-
+  
+  get "/rewards", to: "rewards#index"
+  
 end
