@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     def index
         user = User.all
-        render json: user.to_json(except: [:created_at, :updated_at])
+        render json: user
     end
 
     def create

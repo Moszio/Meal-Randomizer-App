@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ProfileRestVisited from './ProfileRestVisited'
 
 const Profile = ({ user, updateImage }) => {
   const [image, setImage] = useState('')
@@ -16,7 +17,7 @@ const Profile = ({ user, updateImage }) => {
       .then((data) => updateImage(data))
   }
 
-  // console.log(user.image)
+  // console.log(user.username)
 
   return (
     <div className='profile-page'>
@@ -49,9 +50,7 @@ const Profile = ({ user, updateImage }) => {
         </div>
 
         <div className='profile-bottom'>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
+          <ProfileRestVisited />
         </div>
       </div>
     </div>
