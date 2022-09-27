@@ -8,7 +8,7 @@ const HomePage = () => {
   // const [places, setPlaces] = useState([{name :"place1"}, {name: "place2"}])
   const [places, setPlaces] = useState([])
   const [coordinates, setCoordinates] = useState({})
-  //   const [bounds, setBounds] = useState({})
+  // const [bounds, setBounds] = useState({})
   const [randomNumber, setRandomNumber] = useState(0)
   const [collapse, setCollapse] = useState(false)
 
