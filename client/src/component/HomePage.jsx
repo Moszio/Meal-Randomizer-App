@@ -4,7 +4,7 @@ import Card from './Restaurant/Card'
 import Details from './Restaurant/Details'
 import './App.css'
 
-const HomePage = () => {
+const HomePage = ({ user }) => {
   // const [places, setPlaces] = useState([{name :"place1"}, {name: "place2"}])
   const [places, setPlaces] = useState([])
   const [coordinates, setCoordinates] = useState({})
@@ -74,6 +74,7 @@ const HomePage = () => {
           handleGetPlacesChange={handleGetPlacesChange}
           places={places}
           randomNumber={randomNumber}
+          user={user}
         />
       ) : (
         <div>

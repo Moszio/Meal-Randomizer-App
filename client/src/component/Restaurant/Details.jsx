@@ -10,9 +10,23 @@ const Details = ({
   handleCollapse,
   handleGetPlacesChange,
   randomNumber,
+  user,
 }) => {
   const place = places?.[randomNumber] ?? { name: 'asdfsdf' }
 
+  const handleAddingLikedRestaurants = async () => {
+    let request = await fetch('http://localhost:3000/restaurants', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: place.name, user_id: user.id }),
+    })
+    let response = await request.json()
+    if (response.ok) {
+      console.log(response)
+    } else console.log('clicke')
+  }
+
+  console.log('IDDDD', user.id)
   return (
     <div className='details-container'>
       <div className='images-container'>
@@ -35,6 +49,7 @@ const Details = ({
         </div>
         <div>
           <button onClick={handleCollapse}>Back</button>
+          <button onClick={handleAddingLikedRestaurants}>like</button>
         </div>
       </div>
     </div>

@@ -42,7 +42,7 @@ function App() {
           <Rewards></Rewards>
         </Route>
         <Route exact path='/'>
-          <HomePage></HomePage>
+          <HomePage user={user}></HomePage>
         </Route>
         <Route exact path='/profile'>
           <Profile user={user} updateImage={updateImage}></Profile>

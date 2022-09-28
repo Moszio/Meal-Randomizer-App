@@ -9,7 +9,7 @@ const Map = ({ coordinates, handleGetPlacesChange }) => {
     <div>
       <div style={{ width: '300px', height: '300px' }}>
         <GoogleMapReact
-          // bootstrapURLKeys={{ key: `${key}` }}
+          bootstrapURLKeys={{ key: `${key}` }}
           defaultCenter={coordinates}
           center={coordinates}
           defaultZoom={14}

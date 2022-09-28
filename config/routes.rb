@@ -16,9 +16,13 @@ Rails.application.routes.draw do
   get "/users", to: "users#index"
   patch "/users/:id", to: "users#update"
   get "/users/:id", to: "users#look"
+  post "/users/:id", to: "users#like"
   
   get "/restaurants", to: "restaurants#show"
-  
+  post "/restaurants", to: "restaurants#like"
+
   get "/rewards", to: "rewards#index"
-  
+
+  get "/visitations", to: "visitations#show"
+  post "visitations", to: "visitations#create"
 end
