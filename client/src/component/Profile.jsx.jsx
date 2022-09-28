@@ -50,7 +50,9 @@ const Profile = ({ user, updateImage }) => {
         </div>
 
         <div className='profile-bottom'>
-          <ProfileRestVisited />
+          {user?.restaurants?.map((restaurant, index) => {
+            return <ProfileRestVisited key={index} restaurant={restaurant} />
+          })}
         </div>
       </div>
     </div>
