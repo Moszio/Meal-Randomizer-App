@@ -12,6 +12,11 @@ const HistoryCard = ({ restaurant }) => {
         {/* <img src={`${}`} alt='' /> */}
         <h3>{}</h3>
         <h4>{}</h4>
+
+        <form action=''>
+          <input type='text' />
+          <button>Submit</button>
+        </form>
       </div>
     </div>
   )

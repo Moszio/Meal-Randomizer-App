@@ -20,10 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_21_142642) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
-    t.string "menu"
     t.string "image"
-    t.boolean "outdoor_seating"
-    t.text "reviews"
+    t.text "notes"
     t.string "price_range"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

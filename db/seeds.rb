@@ -47,9 +47,9 @@ Reward.create(name: "Voucher", category: "restaurants", cost: 10, image: "https:
 #t.integer "restaurant_id"
 puts "Seeding Restaurants"
 
-restaurant_1 = Restaurant.create!(name: "Chipotle", outdoor_seating: true, reviews: nil, price_range: "$")
-restaurant_2 = Restaurant.create!(name: "Mcdonalds", outdoor_seating: false, reviews: nil, price_range: "$" )
-restaurant_3 = Restaurant.create!(name: "Chipriani", outdoor_seating: false, reviews: nil, price_range: "$$$$" )
+restaurant_1 = Restaurant.create!(name: "Chipotle" , notes: nil, price_range: "$")
+restaurant_2 = Restaurant.create!(name: "Mcdonalds", notes: nil, price_range: "$" )
+restaurant_3 = Restaurant.create!(name: "Chipriani" ,notes: nil, price_range: "$$$$" )
 
 
 puts "Seeding Visitation"
@@ -59,7 +59,7 @@ puts "Seeding Visitation"
 end
 # t.string "name"
 # t.string "image"
-# t.boolean "outdoor_seating"
+# t.boolean ""
 # t.text "reviews"
 # t.string "price_range"
 
