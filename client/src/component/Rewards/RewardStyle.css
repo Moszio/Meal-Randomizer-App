@@ -1,30 +1,47 @@
 .rewards-page {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  flex-direction: column;
+}
+
+.welcome-message {
+  text-align: center;
+  padding: 2rem 0 2rem 0;
+  font-weight: bold;
+  font-size: 50px;
 }
 
 .rewards-container {
   display: flex;
   align-content: space-around;
   flex-wrap: wrap;
-  width: calc();
+  width: min(100% - 2rem, 700px);
   margin-inline: auto;
   /* background-color: aqua; */
   gap: 20px;
 }
 
-.reward-card {
-  width: 300px;
-  height: 300px;
+.history-card {
+  height: min(100% - 2rem, 700px);
   background-color: var(--color-white);
   box-shadow: var(--box-shadow-1);
   text-align: center;
   border-radius: 5px;
-  width: min(100% - 2rem, 300px);
+  width: min(100% - 2rem, 700px);
   margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.reward-card img {
-  height: 100px;
+.history-image {
+  width: min(100% - 2rem, 300px);
+}
+.history-image img {
+  width: min(100% - 2rem, 300px);
+  object-fit: contain;
+}
+
+.history-details {
+  width: min(100% - 2rem, 350px);
 }

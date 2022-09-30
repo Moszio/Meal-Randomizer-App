@@ -5,10 +5,15 @@ const RewardsCard = ({ reward }) => {
 
   return (
     <div className='reward-card'>
-      <h2>{name}</h2>
-      <img src={`${image}`} alt='' />
-      <h3>{cost}</h3>
-      <h4>{category}</h4>
+      <div>
+        {' '}
+        <img src={`${image}`} alt='' />
+      </div>
+      <div>
+        <h2>{name}</h2>
+        <h3>{cost}</h3>
+        <h4>{category}</h4>
+      </div>
     </div>
   )
 }
