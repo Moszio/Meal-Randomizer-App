@@ -34,8 +34,8 @@ const HomePage = ({ user }) => {
   //   }, [bounds, coordinates])
   //   console.log('places', places)
 
-  const handleGetPlacesChange = (bounds) => {
-    getPlacesData(bounds.sw, bounds.ne)
+  const handleGetPlacesChange = (coordinates) => {
+    getPlacesData(coordinates.lat, coordinates.lng)
       .then((data) => {
         // console.log(data)
         if (!data) {
@@ -46,22 +46,22 @@ const HomePage = ({ user }) => {
         setPlaces([])
       })
   }
-  // console.log(bounds.ne, bounds.sw)
+  console.log('coordinates', coordinates.lat, coordinates.lng)
 
   const handleRandomPlace = () => {
     const randomNumber = Math.floor(Math.random() * places?.length)
     setRandomNumber(randomNumber)
-    setCollapse(true)
+    // setCollapse(true)
   }
   const handleCollapseForCardAndDetails = () => {
     setCollapse(!collapse)
   }
 
   //   console.log(collapse)
-  //   console.log(randomNumber)
+  console.log(places)
   return (
     <div className='home-page'>
-      {/* <h1>{places?.[randomNumber]?.name}</h1> */}
+      <h1>{places?.[randomNumber]?.name}</h1>
       {/* {places.map((place) => {
                 return <h5>{place.name}</h5>
             })} */}
@@ -82,7 +82,7 @@ const HomePage = ({ user }) => {
             <Card handleCollapse={handleCollapseForCardAndDetails} />
           </div>
           <div>
-            <h1 onClick={handleRandomPlace}>Randomizer</h1>
+            <h1 onClick={handleGetPlacesChange}>Randomizer</h1>
           </div>
         </div>
       )}

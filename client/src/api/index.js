@@ -7,16 +7,18 @@ const hostKey = config.SECRET_HOST_KEY_KEY
 
 const URL = `${urlKey}`
 
-const getPlacesData = async (sw, ne) => {
+const getPlacesData = async (lat, lng) => {
   try {
     const {
       data: { data },
     } = await axios.get(URL, {
       params: {
-        bl_latitude: sw.lat,
-        tr_latitude: ne.lat,
-        bl_longitude: sw.lng,
-        tr_longitude: ne.lng,
+        latitude: lng,
+        longitude: lat,
+        // bl_latitude: sw.lat,
+        // tr_latitude: ne.lat,
+        // bl_longitude: sw.lng,
+        // tr_longitude: ne.lng,
         // bl_latitude: 40.72414437513456,
         // tr_latitude: 40.74989637911287,
         // bl_longitude: -74.05544740327149,
