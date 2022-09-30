@@ -1,24 +1,25 @@
 import { useState, useEffect } from 'react'
+import HistoryNotes from './HistoryNotes'
 
 const HistoryCard = ({ restaurant }) => {
-  const [newNotes, setNewNotes] = useState([])
+  // const [newNotes, setNewNotes] = useState([])
   const [notes, setNotes] = useState([])
 
   const handlePostNewNote = async () => {
-    const request = await fetch('/me')
+    const request = await fetch(`/restaurants/${restaurant.id}`)
     const response = await request.json()
-    setNotes(response.restaurants.notes)
+    setNotes(response.notes)
   }
 
   useEffect(() => {
     handlePostNewNote()
   }, [])
 
-  const addNewNote = (newNote) => {
-    setNotes([...notes, newNote])
-  }
+  // const addNewNote = (newNote) => {
+  //   setNotes([...notes, newNote])
+  // }
 
-  console.log('something', newNotes)
+  console.log('something', notes)
 
   return (
     <div className='history-card'>
@@ -33,7 +34,9 @@ const HistoryCard = ({ restaurant }) => {
         {/* <img src={`${}`} alt='' /> */}
         <h3>{}</h3>
         <h4>{}</h4>
-
+        {notes.map((note, index) => {
+          return <HistoryNotes note={note} key={index} />
+        })}
         <form action=''>
           <input type='text' />
           <button>Submit</button>

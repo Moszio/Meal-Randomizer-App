@@ -13,6 +13,7 @@
 ActiveRecord::Schema[7.0].define(version: 2022_09_30_203515) do
   create_table "notes", force: :cascade do |t|
     t.string "note"
+    t.integer "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -20,7 +21,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_203515) do
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "image"
-    t.text "notes"
     t.string "price_range"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

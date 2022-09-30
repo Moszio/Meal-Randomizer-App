@@ -39,7 +39,11 @@ puts "Seeding Visitation"
     Visitation.create!(restaurant_id: Restaurant.all.sample.id, user_id: User.all.sample.id)
 end
 
-
-
+1.times do 
+    Note.create!(note: "This is my favourite restaurant", restaurant_id: Restaurant.all.sample.id)
+    Note.create!(note: "It was ok", restaurant_id: Restaurant.all.sample.id)
+    Note.create!(note: "Not my style", restaurant_id: Restaurant.all.sample.id)
+    Note.create!(note: "Love it", restaurant_id: Restaurant.all.sample.id)
+end
 
 puts "Done Seeding"

@@ -19,7 +19,10 @@ Rails.application.routes.draw do
   post "/users/:id", to: "users#like"
   
   get "/restaurants", to: "restaurants#show"
+  get "/restaurants/:id", to: "restaurants#each"
   post "/restaurants", to: "restaurants#like"
 
   get "/visitations", to: "visitations#show"
+
+  post "/notes", to: "notes#create"
 end
