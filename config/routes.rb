@@ -24,5 +24,4 @@ Rails.application.routes.draw do
   get "/rewards", to: "rewards#index"
 
   get "/visitations", to: "visitations#show"
-  post "visitations", to: "visitations#create"
 end

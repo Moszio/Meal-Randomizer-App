@@ -9,7 +9,7 @@ const Navbar = ({ onLogout, user }) => {
 
   return (
     <div className='navbar-container'>
-      <div className='application-name'></div>
+      <div className='application-name'>Launch ROulette</div>
       <div className='navbar-controllers'>
         <Link to='/'>
           <div>Home</div>
@@ -17,9 +17,12 @@ const Navbar = ({ onLogout, user }) => {
         <Link to='/profile'>
           <div>Profile</div>
         </Link>
-        <Link to='/rewards'>
-          <div>Rewards</div>
+        <Link to='/history'>
+          <div>History</div>
         </Link>
+        {/* <Link to='/rewards'>
+          <div>Rewards</div>
+        </Link> */}
         {user ? (
           <div onClick={handleLogout}>Logout</div>
         ) : (

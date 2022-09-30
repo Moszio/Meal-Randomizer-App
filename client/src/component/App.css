@@ -6,7 +6,8 @@
 
 .navbar-container {
   display: flex;
-  flex-direction: row-reverse;
+  /* flex-direction: row-reverse; */
+  justify-content: space-between;
   align-items: center;
   background-color: bisque;
   height: 50px;
@@ -16,6 +17,9 @@
   display: flex;
   gap: 5%;
   justify-content: flex-end;
+}
+
+.application-name {
 }
 
 .home-page {

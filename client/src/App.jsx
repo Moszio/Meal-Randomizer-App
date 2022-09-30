@@ -4,6 +4,8 @@ import SignUp from './component/SignUp.jsx'
 import Navbar from './component/Navbar.jsx'
 import Rewards from './component/Rewards/Rewards.jsx'
 import Profile from './component/Profile.jsx.jsx'
+import History from './component/History.jsx'
+import Details from './component/Restaurant/Details.jsx'
 import './component/App.css'
 import { Route, Switch } from 'react-router-dom'
 
@@ -47,6 +49,12 @@ function App() {
         <Route exact path='/profile'>
           <Profile user={user} updateImage={updateImage}></Profile>
         </Route>
+        <Route exact path='/history'>
+          <History user={user} />
+        </Route>
+        {/* <Route exact path='/details'>
+          <Details user={user} />
+        </Route> */}
       </Switch>
     </div>
   )

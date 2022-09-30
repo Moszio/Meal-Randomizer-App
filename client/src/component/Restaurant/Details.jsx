@@ -18,7 +18,10 @@ const Details = ({
     let request = await fetch('http://localhost:3000/restaurants', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: place.name, user_id: user.id }),
+      body: JSON.stringify({
+        name: place.name,
+        user_id: user.id,
+      }),
     })
     let response = await request.json()
     if (response.ok) {
@@ -26,7 +29,7 @@ const Details = ({
     } else console.log('clicke')
   }
 
-  console.log('IDDDD', user.id)
+  // console.log('IDDDD', user.id)
   return (
     <div className='details-container'>
       <div className='images-container'>
