@@ -1,7 +1,24 @@
+import { useState, useEffect } from 'react'
+
 const HistoryCard = ({ restaurant }) => {
+  const [newNotes, setNewNotes] = useState([])
+  const [notes, setNotes] = useState([])
+
   const handlePostNewNote = async () => {
-    const response = await fetch('')
+    const request = await fetch('/me')
+    const response = await request.json()
+    setNotes(response.restaurants.notes)
   }
+
+  useEffect(() => {
+    handlePostNewNote()
+  }, [])
+
+  const addNewNote = (newNote) => {
+    setNotes([...notes, newNote])
+  }
+
+  console.log('something', newNotes)
 
   return (
     <div className='history-card'>
