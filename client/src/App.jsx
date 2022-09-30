@@ -2,7 +2,6 @@ import Login from './component/Login.jsx'
 import HomePage from './component/HomePage.jsx'
 import SignUp from './component/SignUp.jsx'
 import Navbar from './component/Navbar.jsx'
-import Rewards from './component/Rewards/Rewards.jsx'
 import Profile from './component/Profile.jsx.jsx'
 import History from './component/History.jsx'
 import Details from './component/Restaurant/Details.jsx'
@@ -39,9 +38,6 @@ function App() {
         </Route>
         <Route exact path='/signup'>
           <SignUp onLogin={setUser}></SignUp>
-        </Route>
-        <Route exact path='/rewards'>
-          <Rewards></Rewards>
         </Route>
         <Route exact path='/'>
           <HomePage user={user}></HomePage>

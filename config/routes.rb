@@ -21,7 +21,5 @@ Rails.application.routes.draw do
   get "/restaurants", to: "restaurants#show"
   post "/restaurants", to: "restaurants#like"
 
-  get "/rewards", to: "rewards#index"
-
   get "/visitations", to: "visitations#show"
 end

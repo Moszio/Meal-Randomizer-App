@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import HistoryCard from './HistoryCard'
+import './Rewards/RewardStyle.css'
 
 const History = ({ user }) => {
   // console.log(user?.restaurants)
