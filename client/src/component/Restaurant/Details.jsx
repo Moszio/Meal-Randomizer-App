@@ -29,32 +29,30 @@ const Details = ({
     } else console.log('clicke')
   }
 
-  // console.log('IDDDD', user.id)
   return (
     <div className='details-container'>
-      <div className='images-container'>
-        {/* <div className='rest-image'><img src={image} alt="restaurant"/></div> */}
-        <div className='map'>
-          <Map
-            // setCoordinates={setCoordinates}
-            // setBounds={setBounds}
-            coordinates={coordinates}
-            handleGetPlacesChange={handleGetPlacesChange}
+      <div className='description-container'>
+        <div className='details-image'>
+          <img
+            src='https://d3aux7tjp119y2.cloudfront.net/original_images/Tak2-CMSTemplate_IrMZHla.jpg'
+            alt='resaurant'
           />
         </div>
-      </div>
-      <div className='description-container'>
-        <div>
+        <div className='details-details'>
           <h1>{place?.name}</h1>
           <h3>{place?.price_level}</h3>
-          {/* <p>{places[randomNumber].description}</p>
-          <h3>{places[randomNumber].rating}</h3> */}
-        </div>
-        <div>
+          <p>description</p>
           <button onClick={handleCollapse}>Back</button>
           <button onClick={handleAddingLikedRestaurants}>like</button>
         </div>
       </div>
+
+      <Map
+        // setCoordinates={setCoordinates}
+        // setBounds={setBounds}
+        coordinates={coordinates}
+        handleGetPlacesChange={handleGetPlacesChange}
+      />
     </div>
   )
 }

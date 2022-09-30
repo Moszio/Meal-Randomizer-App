@@ -7,7 +7,7 @@ const Map = ({ coordinates, handleGetPlacesChange }) => {
 
   return (
     <div>
-      <div style={{ width: '300px', height: '300px' }}>
+      <div style={{ width: '600px', height: '600px' }}>
         <GoogleMapReact
           // bootstrapURLKeys={{ key: `${key}` }}
           defaultCenter={coordinates}
