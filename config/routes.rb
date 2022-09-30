@@ -24,5 +24,8 @@ Rails.application.routes.draw do
 
   get "/visitations", to: "visitations#show"
 
+  get "/notes/:id", to: "notes#show"
   post "/notes", to: "notes#create"
+  delete "/notes/:id", to: "notes#destroy"
+  # patch "/notes/:id", to: "notes#update"
 end

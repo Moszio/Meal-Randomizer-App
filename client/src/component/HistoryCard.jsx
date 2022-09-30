@@ -1,25 +1,27 @@
 import { useState, useEffect } from 'react'
 import HistoryNotes from './HistoryNotes'
+import HistoryNoteForm from './HistoryNoteForm'
 
 const HistoryCard = ({ restaurant }) => {
-  // const [newNotes, setNewNotes] = useState([])
   const [notes, setNotes] = useState([])
 
-  const handlePostNewNote = async () => {
-    const request = await fetch(`/restaurants/${restaurant.id}`)
+  const handleFetchNote = async () => {
+    const request = await fetch(`/restaurants/${restaurant?.id}`)
     const response = await request.json()
     setNotes(response.notes)
   }
 
   useEffect(() => {
-    handlePostNewNote()
+    handleFetchNote()
   }, [])
 
-  // const addNewNote = (newNote) => {
-  //   setNotes([...notes, newNote])
-  // }
+  const addNewNote = (newNote) => {
+    setNotes([...notes, newNote])
+  }
 
-  console.log('something', notes)
+  const removeNote = (id) => {
+    setNotes(notes.filter((note) => note.id !== id))
+  }
 
   return (
     <div className='history-card'>
@@ -34,13 +36,17 @@ const HistoryCard = ({ restaurant }) => {
         {/* <img src={`${}`} alt='' /> */}
         <h3>{}</h3>
         <h4>{}</h4>
-        {notes.map((note, index) => {
-          return <HistoryNotes note={note} key={index} />
+        {notes?.map((note, index) => {
+          return (
+            <HistoryNotes
+              note={note}
+              key={index}
+              restaurant={restaurant}
+              removeNote={removeNote}
+            />
+          )
         })}
-        <form action=''>
-          <input type='text' />
-          <button>Submit</button>
-        </form>
+        <HistoryNoteForm restaurant={restaurant} addNewNote={addNewNote} />
       </div>
     </div>
   )
