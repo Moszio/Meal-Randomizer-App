@@ -35,6 +35,11 @@ function App() {
   const removeRestaurantFromHistory = (id) => {
     setRestaurants(restaurants.filter((restaurant) => restaurant.id !== id))
   }
+
+  const addNewRestaurantToHistory = (newRestaurant) => {
+    setRestaurants([...restaurants, newRestaurant])
+  }
+
   // console.log(restaurants)
 
   return (
@@ -48,14 +53,17 @@ function App() {
           <SignUp onLogin={setUser}></SignUp>
         </Route>
         <Route exact path='/'>
-          <HomePage user={user}></HomePage>
+          <HomePage
+            user={user}
+            addNewRestaurantToHistory={addNewRestaurantToHistory}
+          ></HomePage>
         </Route>
         <Route exact path='/profile'>
           <Profile user={user} updateImage={updateImage}></Profile>
         </Route>
         <Route exact path='/history'>
           <History
-            user={restaurants}
+            restaurants={restaurants}
             removeRestaurantFromHistory={removeRestaurantFromHistory}
           />
         </Route>
