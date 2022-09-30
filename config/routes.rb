@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get "/restaurants", to: "restaurants#show"
   get "/restaurants/:id", to: "restaurants#each"
   post "/restaurants", to: "restaurants#like"
+  delete "/restaurants/:id", to:"restaurants#destroy"
 
   get "/visitations", to: "visitations#show"
 

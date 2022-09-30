@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import HistoryNotes from './HistoryNotes'
 import HistoryNoteForm from './HistoryNoteForm'
 
-const HistoryCard = ({ restaurant }) => {
+const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
   const [notes, setNotes] = useState([])
 
   const handleFetchNote = async () => {
@@ -10,6 +10,15 @@ const HistoryCard = ({ restaurant }) => {
     const response = await request.json()
     setNotes(response.notes)
   }
+
+  const handleDeleteHistoryCard = async () => {
+    const request = await fetch(`/restaurants/${restaurant?.id}`, {
+      method: 'DELETE',
+    })
+    removeRestaurantFromHistory(restaurant.id)
+  }
+
+  // console.log('check', restaurant.id)
 
   useEffect(() => {
     handleFetchNote()
@@ -29,6 +38,7 @@ const HistoryCard = ({ restaurant }) => {
         <img
           src='https://d3aux7tjp119y2.cloudfront.net/original_images/Tak2-CMSTemplate_IrMZHla.jpg'
           alt=''
+          onClick={handleDeleteHistoryCard}
         />
       </div>
       <div className='history-details'>

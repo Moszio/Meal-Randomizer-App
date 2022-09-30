@@ -16,11 +16,14 @@ function App() {
   // const isLogged = useSelector(state => state.isLogged)
 
   const [user, setUser] = useState({})
+  const [restaurants, setRestaurants] = useState([])
 
   useEffect(() => {
     fetch('/me').then((response) => {
       if (response.ok) {
-        response.json().then((user) => setUser(user))
+        response
+          .json()
+          .then((user) => (setUser(user), setRestaurants(user.restaurants)))
       }
     })
   }, [])
@@ -28,6 +31,11 @@ function App() {
   const updateImage = (profileImage) => {
     setUser(user.id === profileImage.id ? profileImage : user)
   }
+
+  const removeRestaurantFromHistory = (id) => {
+    setRestaurants(restaurants.filter((restaurant) => restaurant.id !== id))
+  }
+  // console.log(restaurants)
 
   return (
     <div>
@@ -46,7 +54,10 @@ function App() {
           <Profile user={user} updateImage={updateImage}></Profile>
         </Route>
         <Route exact path='/history'>
-          <History user={user} />
+          <History
+            user={restaurants}
+            removeRestaurantFromHistory={removeRestaurantFromHistory}
+          />
         </Route>
         {/* <Route exact path='/details'>
           <Details user={user} />

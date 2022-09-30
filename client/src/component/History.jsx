@@ -1,29 +1,24 @@
-import { useState, useEffect } from 'react'
 import HistoryCard from './HistoryCard'
 import './Rewards/RewardStyle.css'
+import { useState } from 'react'
 
-const History = ({ user }) => {
-  // console.log(user?.restaurants)
-  const [notes, setNotes] = useState([])
+const History = ({ user, removeRestaurantFromHistory }) => {
+  const [restaurants, setRestaurants] = useState([user.restaurants])
 
-  const addNewNote = (newNote) => {
-    setNotes([...notes, newNote])
-  }
-
-  //  const removeToy = (id) => {
-  //    setToys(toys.filter((toy) => toy.id !== id))
-  //  }
-
-  //  const updateLike = (toyLike) => {
-  //    setToys(toys.map((toy) => (toy.id === toyLike.id ? toyLike : toy)))
-  //  }
+  // console.log('test', restaurants)
 
   return (
     <div className='rewards-page'>
       <div className='welcome-message '>WELCOME MESSAGE</div>
       <div className='rewards-container'>
-        {user?.restaurants?.map((restaurant, index) => {
-          return <HistoryCard key={index} restaurant={restaurant} />
+        {user?.map((restaurant, index) => {
+          return (
+            <HistoryCard
+              key={index}
+              restaurant={restaurant}
+              removeRestaurantFromHistory={removeRestaurantFromHistory}
+            />
+          )
         })}
       </div>
     </div>
