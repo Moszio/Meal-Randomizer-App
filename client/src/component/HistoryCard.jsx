@@ -1,4 +1,8 @@
 const HistoryCard = ({ restaurant }) => {
+  const handlePostNewNote = async () => {
+    const response = await fetch('')
+  }
+
   return (
     <div className='history-card'>
       <div className='history-image'>
