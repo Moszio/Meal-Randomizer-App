@@ -61,7 +61,7 @@ const HomePage = ({ user }) => {
   //   console.log(randomNumber)
   return (
     <div className='home-page'>
-      <h1>{places?.[randomNumber]?.name}</h1>
+      {/* <h1>{places?.[randomNumber]?.name}</h1> */}
       {/* {places.map((place) => {
                 return <h5>{place.name}</h5>
             })} */}
