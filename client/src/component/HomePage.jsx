@@ -3,9 +3,10 @@ import getPlacesData from '../api/index.js'
 import Card from './Restaurant/Card'
 import Details from './Restaurant/Details'
 import './App.css'
-
+import { useDispatch } from 'react-redux'
+import { increment } from '../actions'
 const HomePage = ({ user, addNewRestaurantToHistory }) => {
-  // const [places, setPlaces] = useState([{name :"place1"}, {name: "place2"}])
+  const dispatch = useDispatch()
   const [places, setPlaces] = useState([])
   const [coordinates, setCoordinates] = useState({})
   // const [bounds, setBounds] = useState({})
@@ -83,7 +84,9 @@ const HomePage = ({ user, addNewRestaurantToHistory }) => {
             <Card handleCollapse={handleCollapseForCardAndDetails} />
           </div>
           <div>
-            <h1 onClick={handleRandomPlace}>Randomizer</h1>
+            <h1 onClick={() => (handleRandomPlace(), dispatch(increment()))}>
+              Randomizer
+            </h1>
           </div>
         </div>
       )}

@@ -23,7 +23,7 @@ function App() {
       if (response.ok) {
         response
           .json()
-          .then((user) => (setUser(user), setRestaurants(user.restaurants)))
+          .then((user) => (setUser(user), setRestaurants(user?.restaurants)))
       }
     })
   }, [])
@@ -33,7 +33,7 @@ function App() {
   }
 
   const removeRestaurantFromHistory = (id) => {
-    setRestaurants(restaurants.filter((restaurant) => restaurant.id !== id))
+    setRestaurants(restaurants?.filter((restaurant) => restaurant.id !== id))
   }
 
   const addNewRestaurantToHistory = (newRestaurant) => {

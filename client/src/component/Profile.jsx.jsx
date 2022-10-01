@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import ProfileRestVisited from './ProfileRestVisited'
+import { useSelector } from 'react-redux'
 
 const Profile = ({ user, updateImage }) => {
   const [image, setImage] = useState('')
-
+  const counter = useSelector((state) => state.counter)
   const updateProfileImage = (e) => {
     e.preventDefault()
     fetch(`http://localhost:3000/users/${user.id}`, {
@@ -46,6 +47,7 @@ const Profile = ({ user, updateImage }) => {
           </div>
           <div className='details-div'>
             <h4>points earned</h4>
+            <h6>{counter}</h6>
           </div>
         </div>
 
