@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_09_30_203515) do
   create_table "notes", force: :cascade do |t|
-    t.string "note"
+    t.text "note"
     t.integer "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,6 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_203515) do
     t.string "username"
     t.string "password_digest"
     t.string "image"
+    t.string "email"
+    t.integer "total_randomized"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

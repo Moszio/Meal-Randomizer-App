@@ -2,7 +2,7 @@ import { useState } from 'react'
 import ProfileRestVisited from './ProfileRestVisited'
 import { useSelector } from 'react-redux'
 
-const Profile = ({ user, updateImage }) => {
+const Profile = ({ user, updateImage, restaurants }) => {
   const [image, setImage] = useState('')
   const counter = useSelector((state) => state.counter)
   const updateProfileImage = (e) => {
@@ -48,6 +48,10 @@ const Profile = ({ user, updateImage }) => {
           <div className='details-div'>
             <h4>points earned</h4>
             <h6>{counter}</h6>
+          </div>
+          <div className='details-div'>
+            <h4>History</h4>
+            <h6>{restaurants?.length}</h6>
           </div>
         </div>
 

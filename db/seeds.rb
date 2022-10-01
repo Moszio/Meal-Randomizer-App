@@ -15,13 +15,14 @@ Visitation.destroy_all
 puts "Seeding Started"
 
 
-User.create(username: "Andor", password_digest: "123", image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80")
-User.create(username: "Bob", password_digest: "asd", image: nil)
-User.create(username: "John", password_digest: "asd", image: nil)
+User.create(username: "Andor", password_digest: "123", image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80", email: nil, total_randomized: 0)
+User.create(username: "Bob", password_digest: "asd", image: nil, email: nil, total_randomized: 0)
+User.create(username: "John", password_digest: "asd", image: nil, email: nil, total_randomized: 0)
 # user3 = User.create(username: "John", password_digest: "123")
 # user4 = User.create(username: "Greg", password_digest: '123')
 # user5 = User.create(username: "Tod", password_digest: "123")
-
+#  t.string "email"
+#  t.integer "total_randomized"
 
 
 #t.integer "user_id"

@@ -59,7 +59,11 @@ function App() {
           ></HomePage>
         </Route>
         <Route exact path='/profile'>
-          <Profile user={user} updateImage={updateImage}></Profile>
+          <Profile
+            user={user}
+            updateImage={updateImage}
+            restaurants={restaurants}
+          ></Profile>
         </Route>
         <Route exact path='/history'>
           <History
