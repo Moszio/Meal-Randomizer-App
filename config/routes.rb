@@ -19,9 +19,14 @@ Rails.application.routes.draw do
   post "/users/:id", to: "users#like"
   
   get "/restaurants", to: "restaurants#show"
+  get "/restaurants/:id", to: "restaurants#each"
   post "/restaurants", to: "restaurants#like"
-
-  get "/rewards", to: "rewards#index"
+  delete "/restaurants/:id", to:"restaurants#destroy"
 
   get "/visitations", to: "visitations#show"
+
+  get "/notes/:id", to: "notes#show"
+  post "/notes", to: "notes#create"
+  delete "/notes/:id", to: "notes#destroy"
+  # patch "/notes/:id", to: "notes#update"
 end

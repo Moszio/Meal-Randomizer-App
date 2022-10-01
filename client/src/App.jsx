@@ -2,7 +2,6 @@ import Login from './component/Login.jsx'
 import HomePage from './component/HomePage.jsx'
 import SignUp from './component/SignUp.jsx'
 import Navbar from './component/Navbar.jsx'
-import Rewards from './component/Rewards/Rewards.jsx'
 import Profile from './component/Profile.jsx.jsx'
 import History from './component/History.jsx'
 import Details from './component/Restaurant/Details.jsx'
@@ -17,11 +16,14 @@ function App() {
   // const isLogged = useSelector(state => state.isLogged)
 
   const [user, setUser] = useState({})
+  const [restaurants, setRestaurants] = useState([])
 
   useEffect(() => {
     fetch('/me').then((response) => {
       if (response.ok) {
-        response.json().then((user) => setUser(user))
+        response
+          .json()
+          .then((user) => (setUser(user), setRestaurants(user.restaurants)))
       }
     })
   }, [])
@@ -29,6 +31,16 @@ function App() {
   const updateImage = (profileImage) => {
     setUser(user.id === profileImage.id ? profileImage : user)
   }
+
+  const removeRestaurantFromHistory = (id) => {
+    setRestaurants(restaurants.filter((restaurant) => restaurant.id !== id))
+  }
+
+  const addNewRestaurantToHistory = (newRestaurant) => {
+    setRestaurants([...restaurants, newRestaurant])
+  }
+
+  // console.log(restaurants)
 
   return (
     <div>
@@ -40,17 +52,20 @@ function App() {
         <Route exact path='/signup'>
           <SignUp onLogin={setUser}></SignUp>
         </Route>
-        <Route exact path='/rewards'>
-          <Rewards></Rewards>
-        </Route>
         <Route exact path='/'>
-          <HomePage user={user}></HomePage>
+          <HomePage
+            user={user}
+            addNewRestaurantToHistory={addNewRestaurantToHistory}
+          ></HomePage>
         </Route>
         <Route exact path='/profile'>
           <Profile user={user} updateImage={updateImage}></Profile>
         </Route>
         <Route exact path='/history'>
-          <History user={user} />
+          <History
+            restaurants={restaurants}
+            removeRestaurantFromHistory={removeRestaurantFromHistory}
+          />
         </Route>
         {/* <Route exact path='/details'>
           <Details user={user} />

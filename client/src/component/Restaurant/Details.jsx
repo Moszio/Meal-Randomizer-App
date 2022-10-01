@@ -11,6 +11,7 @@ const Details = ({
   handleGetPlacesChange,
   randomNumber,
   user,
+  addNewRestaurantToHistory,
 }) => {
   const place = places?.[randomNumber] ?? { name: 'asdfsdf' }
 
@@ -24,9 +25,10 @@ const Details = ({
       }),
     })
     let response = await request.json()
-    if (response.ok) {
-      console.log(response)
-    } else console.log('clicke')
+    addNewRestaurantToHistory(response)
+    // if (response.ok) {
+    //   console.log(response)
+    // } else console.log('clicke')
   }
 
   return (

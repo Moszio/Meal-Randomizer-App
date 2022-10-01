@@ -1,24 +1,36 @@
 import { useState, useEffect } from 'react'
+import HistoryNotes from './HistoryNotes'
+import HistoryNoteForm from './HistoryNoteForm'
 
-const HistoryCard = ({ restaurant }) => {
-  const [newNotes, setNewNotes] = useState([])
+const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
   const [notes, setNotes] = useState([])
 
-  const handlePostNewNote = async () => {
-    const request = await fetch('/me')
+  const handleFetchNote = async () => {
+    const request = await fetch(`/restaurants/${restaurant?.id}`)
     const response = await request.json()
-    setNotes(response.restaurants.notes)
+    setNotes(response.notes)
   }
 
+  const handleDeleteHistoryCard = async () => {
+    const request = await fetch(`/restaurants/${restaurant?.id}`, {
+      method: 'DELETE',
+    })
+    removeRestaurantFromHistory(restaurant.id)
+  }
+
+  // console.log('check', restaurant.id)
+
   useEffect(() => {
-    handlePostNewNote()
+    handleFetchNote()
   }, [])
 
   const addNewNote = (newNote) => {
     setNotes([...notes, newNote])
   }
 
-  console.log('something', newNotes)
+  const removeNote = (id) => {
+    setNotes(notes.filter((note) => note.id !== id))
+  }
 
   return (
     <div className='history-card'>
@@ -26,6 +38,7 @@ const HistoryCard = ({ restaurant }) => {
         <img
           src='https://d3aux7tjp119y2.cloudfront.net/original_images/Tak2-CMSTemplate_IrMZHla.jpg'
           alt=''
+          onClick={handleDeleteHistoryCard}
         />
       </div>
       <div className='history-details'>
@@ -33,11 +46,17 @@ const HistoryCard = ({ restaurant }) => {
         {/* <img src={`${}`} alt='' /> */}
         <h3>{}</h3>
         <h4>{}</h4>
-
-        <form action=''>
-          <input type='text' />
-          <button>Submit</button>
-        </form>
+        {notes?.map((note, index) => {
+          return (
+            <HistoryNotes
+              note={note}
+              key={index}
+              restaurant={restaurant}
+              removeNote={removeNote}
+            />
+          )
+        })}
+        <HistoryNoteForm restaurant={restaurant} addNewNote={addNewNote} />
       </div>
     </div>
   )
