@@ -1,15 +1,20 @@
 import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const Navbar = ({ onLogout, user }) => {
+  const history = useHistory()
+
   const handleLogout = () => {
     fetch('/logout', {
       method: 'DELETE',
-    }).then(() => onLogout(null))
+    }).then(() => onLogout(null), history.push('/'))
   }
 
   return (
     <div className='navbar-container'>
-      <div className='application-name'>Launch ROulette</div>
+      <div className='application-name' onClick={() => history.push('/')}>
+        Launch ROulette
+      </div>
       <div className='navbar-controllers'>
         <Link to='/'>
           <div>Home</div>
