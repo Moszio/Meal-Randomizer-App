@@ -13,14 +13,14 @@ const Map = ({ coordinates, handleGetPlacesChange }) => {
           defaultCenter={coordinates}
           center={coordinates}
           defaultZoom={14}
-          onChange={(e) => {
-            console.log('ON CHANGE', e)
-            // setCoordinates({ lat: e.center.lat, lng: e.center.lng })
-            handleGetPlacesChange({
-              ne: e.marginBounds.ne,
-              sw: e.marginBounds.sw,
-            })
-          }}
+          // onChange={(e) => {
+          //   console.log('ON CHANGE', e)
+          //   // setCoordinates({ lat: e.center.lat, lng: e.center.lng })
+          //   handleGetPlacesChange({
+          //     ne: e.marginBounds.ne,
+          //     sw: e.marginBounds.sw,
+          //   })
+          // }}
         ></GoogleMapReact>
       </div>
     </div>

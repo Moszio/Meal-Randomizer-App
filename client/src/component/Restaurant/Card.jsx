@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = ({ place, handleCollapse }) => {
+const Card = ({ place, handleCollapse, randomNumber }) => {
   return (
     <div
       className='restaurant-card-container'
@@ -15,7 +15,7 @@ const Card = ({ place, handleCollapse }) => {
         {/* <img src={image} alt="somepicture" style={{width: "300px", height:"300px"}}/> */}
       </div>
       <div className='details'>
-        {/* <h2>{place[1].name}</h2> */}
+        <h2>{place?.[randomNumber]?.name}</h2>
         {/* <p>{description}</p>
         <h4>{price_level}</h4> */}
         <button onClick={handleCollapse}>click</button>
