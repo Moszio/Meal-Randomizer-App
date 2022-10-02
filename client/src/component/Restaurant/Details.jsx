@@ -55,6 +55,7 @@ const Details = ({
         // setBounds={setBounds}
         coordinates={coordinates}
         handleGetPlacesChange={handleGetPlacesChange}
+        place={place}
       />
     </div>
   )

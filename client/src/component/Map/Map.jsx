@@ -1,7 +1,7 @@
 import GoogleMapReact from 'google-map-react'
 import config from '../../config'
 
-const Map = ({ coordinates, handleGetPlacesChange }) => {
+const Map = ({ coordinates, handleGetPlacesChange, place }) => {
   const key = config.MY_API_TOKEN
   // const coordinates1 = { lat: 40.73390079999999, lng: -74.0425728 }
 
@@ -21,7 +21,9 @@ const Map = ({ coordinates, handleGetPlacesChange }) => {
               sw: e.marginBounds.sw,
             })
           }}
-        ></GoogleMapReact>
+        >
+          <div>{place.name}</div>
+        </GoogleMapReact>
       </div>
     </div>
   )
