@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import ProfileRestVisited from './ProfileRestVisited'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 
 const Profile = ({ user, updateImage, restaurants }) => {
   const [image, setImage] = useState('')
-  const counter = useSelector((state) => state.counter)
+  // const counter = useSelector((state) => state.counter)
   const updateProfileImage = (e) => {
     e.preventDefault()
-    fetch(`http://localhost:3000/users/${user.id}`, {
+    fetch(`/users/${user.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const Profile = ({ user, updateImage, restaurants }) => {
           </div>
           <div className='details-div'>
             <h4>points earned</h4>
-            <h6>{counter}</h6>
+            <h6>{user?.total_randomized}</h6>
           </div>
           <div className='details-div'>
             <h4>History</h4>

@@ -1,14 +1,21 @@
 import HistoryCard from './HistoryCard'
 import './Rewards/RewardStyle.css'
+import Search from './SearchBar'
 
-const History = ({ restaurants, removeRestaurantFromHistory }) => {
+const History = ({
+  restaurants,
+  removeRestaurantFromHistory,
+  searchResult,
+  setSearch,
+}) => {
   // console.log('test', restaurants)
 
   return (
     <div className='rewards-page'>
       <div className='welcome-message '>WELCOME MESSAGE</div>
       <div className='rewards-container'>
-        {restaurants?.map((restaurant, index) => {
+        <Search setSearch={setSearch} />
+        {searchResult?.map((restaurant, index) => {
           return (
             <HistoryCard
               key={index}

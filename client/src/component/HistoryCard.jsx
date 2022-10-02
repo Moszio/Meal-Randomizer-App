@@ -45,7 +45,6 @@ const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
         <h2>{restaurant?.name}</h2>
         {/* <img src={`${}`} alt='' /> */}
         <h3>{}</h3>
-        <h4>{}</h4>
         {notes?.map((note, index) => {
           return (
             <HistoryNotes

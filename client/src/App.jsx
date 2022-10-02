@@ -4,7 +4,6 @@ import SignUp from './component/SignUp.jsx'
 import Navbar from './component/Navbar.jsx'
 import Profile from './component/Profile.jsx.jsx'
 import History from './component/History.jsx'
-import Details from './component/Restaurant/Details.jsx'
 import './component/App.css'
 import { Route, Switch } from 'react-router-dom'
 
@@ -17,6 +16,7 @@ function App() {
 
   const [user, setUser] = useState({})
   const [restaurants, setRestaurants] = useState([])
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     fetch('/me').then((response) => {
@@ -40,7 +40,14 @@ function App() {
     setRestaurants([...restaurants, newRestaurant])
   }
 
-  // console.log(restaurants)
+  const updateCount = (randomizerCount) => {
+    setUser(user?.id === randomizerCount?.id ? randomizerCount : user)
+  }
+  // console.log(user.total_randomized)
+
+  const searchResult = restaurants?.filter((restaurant) => {
+    return restaurant.name.toLowerCase().includes(search.toLowerCase())
+  })
 
   return (
     <div>
@@ -56,6 +63,7 @@ function App() {
           <HomePage
             user={user}
             addNewRestaurantToHistory={addNewRestaurantToHistory}
+            updateCount={updateCount}
           ></HomePage>
         </Route>
         <Route exact path='/profile'>
@@ -69,6 +77,8 @@ function App() {
           <History
             restaurants={restaurants}
             removeRestaurantFromHistory={removeRestaurantFromHistory}
+            searchResult={searchResult}
+            setSearch={setSearch}
           />
         </Route>
         {/* <Route exact path='/details'>

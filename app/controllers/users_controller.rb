@@ -28,6 +28,10 @@ class UsersController < ApplicationController
                 user.image = params[:image]
                 user.save!
             end 
+            if params[:total_randomized]
+                user.total_randomized = params[:total_randomized]
+                user.save!
+            end 
             render json: user
         else
             render json: {error: user.errors.full_messages}, status: 422

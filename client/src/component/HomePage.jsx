@@ -4,14 +4,15 @@ import Card from './Restaurant/Card'
 import Details from './Restaurant/Details'
 import './App.css'
 import { useDispatch } from 'react-redux'
-import { increment } from '../actions'
-const HomePage = ({ user, addNewRestaurantToHistory }) => {
-  const dispatch = useDispatch()
+// import { increment } from '../actions'
+const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
+  // const { total_randomized } = user
+  // const dispatch = useDispatch()
   const [places, setPlaces] = useState([])
   const [coordinates, setCoordinates] = useState({})
-  // const [bounds, setBounds] = useState({})
   const [randomNumber, setRandomNumber] = useState(0)
   const [collapse, setCollapse] = useState(false)
+  // const [bounds, setBounds] = useState({})
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -47,6 +48,22 @@ const HomePage = ({ user, addNewRestaurantToHistory }) => {
         setPlaces([])
       })
   }
+
+  const handleRandomizerCountUpdate = async () => {
+    const counterObj = {
+      total_randomized: user.total_randomized + 1,
+    }
+    const request = await fetch(`/users/${user.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(counterObj),
+    })
+    let response = await request.json()
+    updateCount(response)
+  }
+
   // console.log(bounds.ne, bounds.sw)
 
   const handleRandomPlace = () => {
@@ -84,7 +101,11 @@ const HomePage = ({ user, addNewRestaurantToHistory }) => {
             <Card handleCollapse={handleCollapseForCardAndDetails} />
           </div>
           <div>
-            <h1 onClick={() => (handleRandomPlace(), dispatch(increment()))}>
+            <h1
+              onClick={() => (
+                handleRandomPlace(), handleRandomizerCountUpdate()
+              )}
+            >
               Randomizer
             </h1>
           </div>
