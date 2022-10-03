@@ -3,16 +3,17 @@ import getPlacesData from '../api/index.js'
 import Card from './Restaurant/Card'
 import Details from './Restaurant/Details'
 import './App.css'
-import { useDispatch } from 'react-redux'
-// import { increment } from '../actions'
+
+function LoadingComponent() {
+  return <div>Loading...</div>
+}
+
 const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
-  // const { total_randomized } = user
-  // const dispatch = useDispatch()
   const [places, setPlaces] = useState([])
   const [coordinates, setCoordinates] = useState({})
-  const [randomNumber, setRandomNumber] = useState(0)
+  const [randomNumber, setRandomNumber] = useState()
   const [collapse, setCollapse] = useState(false)
-  // const [bounds, setBounds] = useState({})
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -22,32 +23,36 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
     )
   }, [])
 
-  //   useEffect(() => {
-  //     getPlacesData(bounds.sw, bounds.ne)
-  //       .then((data) => {
-  //         // console.log(data)
-  //         if (!data) {
-  //           setPlaces([])
-  //         } else setPlaces(data)
-  //       })
-  //       .catch(() => {
-  //         setPlaces([])
-  //       })
-  //   }, [bounds, coordinates])
-  //   console.log('places', places)
-
-  const handleGetPlacesChange = (bounds) => {
-    getPlacesData(bounds.sw, bounds.ne)
+  // console.log('coordinate', coordinates)
+  // console.log('places', places)
+  useEffect(() => {
+    setLoading(true)
+    getPlacesData(coordinates.lat, coordinates.lng)
       .then((data) => {
         // console.log(data)
         if (!data) {
           setPlaces([])
         } else setPlaces(data)
+        setLoading(false)
       })
       .catch(() => {
         setPlaces([])
+        setLoading(false)
       })
-  }
+  }, [coordinates])
+  // console.log('places', places)
+
+  // const handleGetPlacesChange = (coordinates) => {
+  //   getPlacesData(coordinates.lat, coordinates.lng)
+  //     .then((data) => {
+  //       if (!data) {
+  //         setPlaces([])
+  //       } else setPlaces(data)
+  //     })
+  //     .catch(() => {
+  //       setPlaces([])
+  //     })
+  // }
 
   const handleRandomizerCountUpdate = async () => {
     const counterObj = {
@@ -64,53 +69,61 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
     updateCount(response)
   }
 
-  // console.log(bounds.ne, bounds.sw)
-
   const handleRandomPlace = () => {
     const randomNumber = Math.floor(Math.random() * places?.length)
     setRandomNumber(randomNumber)
-    setCollapse(true)
+    // setCollapse(true)
   }
+
   const handleCollapseForCardAndDetails = () => {
     setCollapse(!collapse)
   }
 
-  //   console.log(collapse)
-  //   console.log(randomNumber)
+  function VisibleComponent() {
+    switch (collapse) {
+      case true:
+        return (
+          <Details
+            setCoordinates={setCoordinates}
+            //   setBounds={setBounds}
+            coordinates={coordinates}
+            handleCollapse={handleCollapseForCardAndDetails}
+            // handleGetPlacesChange={handleGetPlacesChange}
+            places={places}
+            randomNumber={randomNumber}
+            user={user}
+            addNewRestaurantToHistory={addNewRestaurantToHistory}
+          />
+        )
+
+      default:
+        return (
+          <div>
+            <div className='cards'>
+              <Card
+                handleCollapse={handleCollapseForCardAndDetails}
+                place={places}
+                randomNumber={randomNumber}
+              />
+            </div>
+            <div>
+              <h1
+                onClick={() => {
+                  handleRandomPlace()
+                  handleRandomizerCountUpdate()
+                }}
+              >
+                Randomizer
+              </h1>
+            </div>
+          </div>
+        )
+    }
+  }
+
   return (
     <div className='home-page'>
-      {/* <h1>{places?.[randomNumber]?.name}</h1> */}
-      {/* {places.map((place) => {
-                return <h5>{place.name}</h5>
-            })} */}
-      {collapse ? (
-        <Details
-          setCoordinates={setCoordinates}
-          //   setBounds={setBounds}
-          coordinates={coordinates}
-          handleCollapse={handleCollapseForCardAndDetails}
-          handleGetPlacesChange={handleGetPlacesChange}
-          places={places}
-          randomNumber={randomNumber}
-          user={user}
-          addNewRestaurantToHistory={addNewRestaurantToHistory}
-        />
-      ) : (
-        <div>
-          <div className='cards'>
-            <Card handleCollapse={handleCollapseForCardAndDetails} />
-          </div>
-          <div>
-            <h1
-              onClick={() => (
-                handleRandomPlace(), handleRandomizerCountUpdate()
-              )}
-            >
-              Randomizer
-            </h1>
-          </div>
-        </div>
-      )}
+      {loading ? <LoadingComponent /> : <VisibleComponent />}
     </div>
   )
 }

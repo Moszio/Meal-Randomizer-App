@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   patch "/users/:id", to: "users#update"
   get "/users/:id", to: "users#look"
   post "/users/:id", to: "users#like"
+  delete "/users/:id", to: "users#destroy"
   
   get "/restaurants", to: "restaurants#show"
   get "/restaurants/:id", to: "restaurants#each"

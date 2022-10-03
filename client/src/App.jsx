@@ -7,13 +7,9 @@ import History from './component/History.jsx'
 import './component/App.css'
 import { Route, Switch } from 'react-router-dom'
 
-// import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react'
 
 function App() {
-  // const counter = useSelector(state => state.counter)
-  // const isLogged = useSelector(state => state.isLogged)
-
   const [user, setUser] = useState({})
   const [restaurants, setRestaurants] = useState([])
   const [search, setSearch] = useState('')
@@ -43,7 +39,6 @@ function App() {
   const updateCount = (randomizerCount) => {
     setUser(user?.id === randomizerCount?.id ? randomizerCount : user)
   }
-  // console.log(user.total_randomized)
 
   const searchResult = restaurants?.filter((restaurant) => {
     return restaurant.name.toLowerCase().includes(search.toLowerCase())

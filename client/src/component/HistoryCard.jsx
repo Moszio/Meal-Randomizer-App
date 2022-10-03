@@ -36,8 +36,8 @@ const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
     <div className='history-card'>
       <div className='history-image'>
         <img
-          src='https://d3aux7tjp119y2.cloudfront.net/original_images/Tak2-CMSTemplate_IrMZHla.jpg'
-          alt=''
+          src={restaurant.image}
+          alt='restaurant'
           onClick={handleDeleteHistoryCard}
         />
       </div>
