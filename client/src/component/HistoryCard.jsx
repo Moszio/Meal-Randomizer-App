@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import HistoryNotes from './HistoryNotes'
 import HistoryNoteForm from './HistoryNoteForm'
+import Slide from './Carousel'
 
 const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
   const [notes, setNotes] = useState([])
+  const [images, setImages] = useState([restaurant.image])
 
   const handleFetchNote = async () => {
     const request = await fetch(`/restaurants/${restaurant?.id}`)
@@ -32,15 +34,20 @@ const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
     setNotes(notes.filter((note) => note.id !== id))
   }
 
+  const updateRestaurantImage = (restaurantImage) => {
+    setImages(
+      restaurant.id === restaurantImage.id ? restaurantImage : restaurant
+    )
+  }
+
   return (
     <div className='history-card'>
       <div className='history-image'>
         {/* <img src={restaurant.image} alt='' onClick={handleDeleteHistoryCard} /> */}
+        <Slide images={images} />
       </div>
       <div className='history-details'>
         <h2>{restaurant?.name}</h2>
-        {/* <img src={`${}`} alt='' /> */}
-        <h3>{}</h3>
         {notes?.map((note, index) => {
           return (
             <HistoryNotes
@@ -51,7 +58,11 @@ const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
             />
           )
         })}
-        <HistoryNoteForm restaurant={restaurant} addNewNote={addNewNote} />
+        <HistoryNoteForm
+          restaurant={restaurant}
+          addNewNote={addNewNote}
+          updateRestaurantImage={updateRestaurantImage}
+        />
       </div>
     </div>
   )
