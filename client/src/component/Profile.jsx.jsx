@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import ProfileRestVisited from './ProfileRestVisited'
-// import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 const Profile = ({ user, updateImage, restaurants }) => {
   const [image, setImage] = useState('')
-  // const counter = useSelector((state) => state.counter)
+  const history = useHistory()
   const updateProfileImage = (e) => {
     e.preventDefault()
     fetch(`/users/${user.id}`, {
@@ -15,9 +15,15 @@ const Profile = ({ user, updateImage, restaurants }) => {
       body: JSON.stringify({ image: image }),
     })
       .then((req) => req.json())
-      .then((data) => updateImage(data))
+      .then((data) => updateImage(data), setImage(''))
   }
 
+  const handleDeleteAccount = async () => {
+    const request = await fetch(`/users/${user.id}`, {
+      method: 'DELETE',
+    })
+    history.push('/login')
+  }
   // console.log(user.username)
 
   return (
@@ -44,6 +50,7 @@ const Profile = ({ user, updateImage, restaurants }) => {
               />
               <input type='submit' />
             </form>
+            <button onClick={handleDeleteAccount}>Delete accoutn</button>
           </div>
           <div className='details-div'>
             <h4>points earned</h4>
@@ -56,7 +63,7 @@ const Profile = ({ user, updateImage, restaurants }) => {
         </div>
 
         <div className='profile-bottom'>
-          {user?.restaurants?.map((restaurant, index) => {
+          {restaurants?.map((restaurant, index) => {
             return <ProfileRestVisited key={index} restaurant={restaurant} />
           })}
         </div>

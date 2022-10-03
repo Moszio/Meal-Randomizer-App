@@ -1,8 +1,8 @@
 class User < ApplicationRecord
 
-    has_many :visitations
+    has_many :visitations, dependent: :destroy
  
-    has_many :restaurants, through: :visitations
+    has_many :restaurants, through: :visitations, dependent: :destroy
 
 
     validates :username, presence: true, uniqueness: true

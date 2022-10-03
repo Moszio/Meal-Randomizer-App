@@ -1,5 +1,5 @@
 class RestaurantSerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :id, :name, :image, :price_range
 
   has_many :notes
 end

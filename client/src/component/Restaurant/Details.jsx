@@ -1,7 +1,6 @@
 import React from 'react'
 import Map from '../Map/Map'
 import './style.css'
-import Loading from '../Loading'
 
 const Details = ({
   // setCoordinates,
@@ -15,6 +14,8 @@ const Details = ({
   addNewRestaurantToHistory,
 }) => {
   const place = places?.[randomNumber] ?? { name: 'asdfsdf' }
+
+  console.log('place', place)
 
   const handleAddingLikedRestaurants = async () => {
     let request = await fetch('http://localhost:3000/restaurants', {
@@ -37,14 +38,27 @@ const Details = ({
       <div className='description-container'>
         <div className='details-image'>
           <img
-            src='https://d3aux7tjp119y2.cloudfront.net/original_images/Tak2-CMSTemplate_IrMZHla.jpg'
+            src={
+              place.photo
+                ? place.photo.images.large.url
+                : 'https://d3aux7tjp119y2.cloudfront.net/original_images/Tak2-CMSTemplate_IrMZHla.jpg'
+            }
             alt='resaurant'
           />
         </div>
         <div className='details-details'>
           <h1>{place?.name}</h1>
           <h3>{place?.price_level}</h3>
-          <p>description</p>
+          <h4>{place?.ranking}</h4>
+          {place?.cuisine?.map(({ name }) => {
+            return <h4 key={name}> {name} </h4>
+          })}
+          <p>{place?.address}</p>
+          <p>{place?.phone}</p>
+          <h4 onClick={() => window.open(place.web_url, '_blank')}>
+            tripadvisor
+          </h4>
+          <h4 onClick={() => window.open(place.website, '_blank')}>website</h4>
           <button onClick={handleCollapse}>Back</button>
           <button onClick={handleAddingLikedRestaurants}>like</button>
         </div>
@@ -55,6 +69,7 @@ const Details = ({
         // setBounds={setBounds}
         coordinates={coordinates}
         handleGetPlacesChange={handleGetPlacesChange}
+        place={place}
       />
     </div>
   )
