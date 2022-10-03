@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ProfileRestVisited from './ProfileRestVisited'
 import { useHistory } from 'react-router-dom'
+import Badges from './Badges.jsx'
 
 const Profile = ({ user, updateImage, restaurants }) => {
   const [image, setImage] = useState('')
@@ -63,9 +63,10 @@ const Profile = ({ user, updateImage, restaurants }) => {
         </div>
 
         <div className='profile-bottom'>
-          {restaurants?.map((restaurant, index) => {
+          {/* {restaurants?.map((restaurant, index) => {
             return <ProfileRestVisited key={index} restaurant={restaurant} />
-          })}
+          })} */}
+          <Badges total={user.total_randomized} />
         </div>
       </div>
     </div>
