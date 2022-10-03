@@ -66,7 +66,7 @@ const Profile = ({ user, updateImage, restaurants }) => {
           {/* {restaurants?.map((restaurant, index) => {
             return <ProfileRestVisited key={index} restaurant={restaurant} />
           })} */}
-          <Badges total={user.total_randomized} />
+          <Badges total={user?.total_randomized} />
         </div>
       </div>
     </div>
