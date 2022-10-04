@@ -11,10 +11,10 @@ const History = ({
   // console.log('test', restaurants)
 
   return (
-    <div className='rewards-page'>
+    <div className='history-page'>
       <div className='welcome-message '>WELCOME MESSAGE</div>
-      <div className='rewards-container'>
-        <Search setSearch={setSearch} />
+      <Search setSearch={setSearch} />
+      <div className='history-container'>
         {searchResult?.map((restaurant, index) => {
           return (
             <HistoryCard

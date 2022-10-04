@@ -1,4 +1,4 @@
-.rewards-page {
+.history-page {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -11,37 +11,76 @@
   font-size: 50px;
 }
 
-.rewards-container {
+.history-container {
   display: flex;
   align-content: space-around;
   flex-wrap: wrap;
-  width: min(100% - 2rem, 700px);
+  max-width: 900px;
   margin-inline: auto;
   /* background-color: aqua; */
   gap: 20px;
 }
 
 .history-card {
-  height: min(100% - 2rem, 700px);
+  height: min(100% - 2rem, 300px);
+  width: min(100% - 2rem, 900px);
   background-color: var(--color-white);
   box-shadow: var(--box-shadow-1);
-  text-align: center;
+  /* text-align: center; */
   border-radius: 5px;
-  width: min(100% - 2rem, 700px);
   margin-inline: auto;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
 }
 
 .history-image {
-  width: min(100% - 2rem, 300px);
+  width: min(100%, 300px);
+  height: max(100%, 300px);
+
+  /* max-width: 300px;
+  max-height: 300px; */
+  /* object-fit: fill;
+  overflow: hidden; */
 }
 .history-image img {
-  width: min(100% - 2rem, 300px);
-  object-fit: contain;
+  width: min(100%, 300px);
+  height: auto;
+  border-radius: 5px 0 0 5px;
+  /* max-width: 300px;
+  max-height: 300px; */
+  object-fit: fill;
+  overflow: hidden;
 }
 
 .history-details {
-  width: min(100% - 2rem, 350px);
+  max-width: 550px;
+  width: 100%;
+  /* text-align: center; */
+}
+
+.history-card img {
+  width: min(100%, 300px);
+  height: 250px;
+  /* max-width: 300px;
+  max-height: 300px; */
+  object-fit: fill;
+  overflow: hidden;
+}
+
+/*Search Bar*/
+
+.prompt {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 20px;
+  margin: 30px auto;
+  border-color: aquamarine;
+}
+
+.search-bar {
+  max-width: 500px;
+  width: 100%;
+  margin: auto auto;
+  padding: 0 20px 0 20px;
 }

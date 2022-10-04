@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import HistoryNotes from './HistoryNotes'
 import HistoryNoteForm from './HistoryNoteForm'
-import Slide from './Carousel'
 
 const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
   const [notes, setNotes] = useState([])
