@@ -56,19 +56,21 @@ const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
           />
           {/* <Slide images={images} onClick={handleDeleteHistoryCard} /> */}
         </div>
-        <div className='history-details' onClick={handleCollapse}>
+        <div className='history-details'>
           <h2>{restaurant?.name}</h2>
-
-          {notes?.map((note, index) => {
-            return (
-              <HistoryNotes
-                note={note}
-                key={index}
-                restaurant={restaurant}
-                removeNote={removeNote}
-              />
-            )
-          })}
+          <p>{restaurant.address}</p>
+          <div className='icon-container'>
+            <div
+              className='icons'
+              onClick={() => window.open(restaurant.website, '_blank')}
+            >
+              <i class='fa-sharp fa-solid fa-blog'></i>
+            </div>
+            <div className='icons' onClick={handleCollapse}>
+              <i class='fa-solid fa-book'></i>
+            </div>
+            <div></div>
+          </div>
 
           {/* <HistoryNoteForm
             restaurant={restaurant}
@@ -84,6 +86,18 @@ const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
             addNewNote={addNewNote}
             updateRestaurantImage={updateRestaurantImage}
           />
+          <div className='notes-container'>
+            {notes?.map((note, index) => {
+              return (
+                <HistoryNotes
+                  note={note}
+                  key={index}
+                  restaurant={restaurant}
+                  removeNote={removeNote}
+                />
+              )
+            })}
+          </div>
         </div>
       ) : (
         ''

@@ -11,23 +11,15 @@ const Card = ({ places, handleCollapse, randomNumber }) => {
   // console.log('num', place)
 
   return (
-    <div
-      className='restaurant-card-container'
-      style={{
-        width: '300px',
-        height: '300px',
-        margin: 'auto auto',
-        textAlign: 'center',
-      }}
-    >
-      <div className='picture'>
+    <div className='restaurant-card-container'>
+      <div className='card-picture'>
         <img
           src={image}
           alt='somepicture'
           style={{ width: '300px', height: '300px' }}
         />
       </div>
-      <div className='details'>
+      <div className='card-details'>
         <h2>{place?.name}</h2>
         <h4>{rating}</h4>
         <Rating name='read-only' value={rating} readOnly />

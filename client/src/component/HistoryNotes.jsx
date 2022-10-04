@@ -21,9 +21,11 @@ const HistoryNotes = ({ note, removeNote }) => {
   //   }
 
   return (
-    <div>
+    <div className='notes'>
       {note.note}
-      <button onClick={handleDeleteNote}>X</button>
+      <button onClick={handleDeleteNote}>
+        <i class='fa-solid fa-minus'></i>
+      </button>
     </div>
   )
 }

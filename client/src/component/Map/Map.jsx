@@ -7,7 +7,7 @@ const Map = ({ coordinates, handleGetPlacesChange, place }) => {
   // console.log('image', place.photo.images.large.url)
   return (
     <div>
-      <div style={{ width: '600px', height: '600px' }}>
+      <div className='mapp'>
         <GoogleMapReact
           bootstrapURLKeys={{ key: `${key}` }}
           defaultCenter={coordinates}

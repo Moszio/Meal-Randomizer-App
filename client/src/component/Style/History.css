@@ -75,17 +75,37 @@
 
 .history-note {
   display: flex;
-  justify-content: flex-end;
+
+  margin: 0 0 10px 10px;
 }
 
 .history-note input {
-  max-width: 550px;
   width: 100%;
   border-radius: 20px;
   margin: 20px auto;
   border-color: aquamarine;
 }
 
+.history-note button {
+  border-radius: 12px;
+  border: none;
+  background-color: aquamarine;
+  font-weight: bold;
+}
+
+.notes-container {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 50px;
+  overflow: auto;
+}
+.notes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.notes button {
+}
 /*Search Bar*/
 
 .prompt {
@@ -101,4 +121,65 @@
   width: 100%;
   margin: auto auto;
   padding: 0 20px 0 20px;
+}
+
+/*ICONS*/
+
+.icon-container {
+  display: flex;
+  width: min(100%, 150px);
+  justify-content: space-between;
+}
+
+.icons {
+  display: flex;
+  width: min(100%, 40px);
+  height: 40px;
+  border-radius: 50%;
+  background-color: aquamarine;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.icons:hover {
+  transform: scale(1.03);
+  transition-duration: 0.2s;
+}
+/*
+.bg-image {
+    background-image: url('https://i.pinimg.com/originals/44/96/58/449658c9cb24e0688af686a341595a64.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes flash {
+ 0% {background-color: inherit;}
+ 100% {background-color: var(--color-orange);}
+
+}
+
+@keyframes slideInFromLeft{
+    0% {
+        transform: translateX(-1000%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+  transform: scale(1.03);
+    transition-duration: 0.2s;
+
+@keyframes student-spin {
+  from {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+} 
+*/
+@media (max-width: 768px) {
 }

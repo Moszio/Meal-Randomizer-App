@@ -5,7 +5,7 @@ import Details from './Restaurant/Details'
 import './Style/App.css'
 
 function LoadingComponent() {
-  return <div>Loading...</div>
+  return <div className='loader'></div>
 }
 
 const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
@@ -98,15 +98,15 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
 
       default:
         return (
-          <div>
-            <div className='cards'>
+          <div className='cards'>
+            <div>
               <Card
                 handleCollapse={handleCollapseForCardAndDetails}
                 places={places}
                 randomNumber={randomNumber}
               />
             </div>
-            <div>
+            <div className='randomizer-container'>
               <h1
                 onClick={() => {
                   handleRandomPlace()

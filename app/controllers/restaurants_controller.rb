@@ -13,7 +13,7 @@ class RestaurantsController < ApplicationController
 
 
     def like
-        restaurant = Restaurant.create!(name: params[:name], image: params[:image], address: params[:address])
+        restaurant = Restaurant.create!(name: params[:name], image: params[:image], address: params[:address], website: params[:website], price_range: params[:price_level])
         visitation = Visitation.create!(user_id: params[:user_id], restaurant_id: restaurant.id)
         render json: restaurant
     end
