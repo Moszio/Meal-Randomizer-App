@@ -27,6 +27,8 @@ const HistoryNoteForm = ({ restaurant, addNewNote }) => {
 
   return (
     <form onSubmit={handlePostNewNote}>
+      <label htmlFor='notes'> Add notes here</label>
+      <br />
       <input
         type='text'
         id='addnote'

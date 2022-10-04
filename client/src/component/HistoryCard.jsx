@@ -5,6 +5,7 @@ import HistoryNoteForm from './HistoryNoteForm'
 const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
   const [notes, setNotes] = useState([])
   const [images, setImages] = useState([restaurant.image])
+  const [collapse, setCollapse] = useState(false)
 
   const handleFetchNote = async () => {
     const request = await fetch(`/restaurants/${restaurant?.id}`)
@@ -17,6 +18,10 @@ const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
       method: 'DELETE',
     })
     removeRestaurantFromHistory(restaurant.id)
+  }
+
+  const handleCollapse = () => {
+    setCollapse(!collapse)
   }
 
   // console.log('check', restaurant.id)
@@ -39,30 +44,50 @@ const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
     )
   }
 
+  console.log(restaurant)
   return (
-    <div className='history-card'>
-      <div className='history-image'>
-        <img src={restaurant.image} alt='' onClick={handleDeleteHistoryCard} />
-        {/* <Slide images={images} onClick={handleDeleteHistoryCard} /> */}
+    <div className='history-card-main'>
+      <div className='history-card'>
+        <div className='history-image'>
+          <img
+            src={restaurant.image}
+            alt=''
+            onClick={handleDeleteHistoryCard}
+          />
+          {/* <Slide images={images} onClick={handleDeleteHistoryCard} /> */}
+        </div>
+        <div className='history-details' onClick={handleCollapse}>
+          <h2>{restaurant?.name}</h2>
+
+          {notes?.map((note, index) => {
+            return (
+              <HistoryNotes
+                note={note}
+                key={index}
+                restaurant={restaurant}
+                removeNote={removeNote}
+              />
+            )
+          })}
+
+          {/* <HistoryNoteForm
+            restaurant={restaurant}
+            addNewNote={addNewNote}
+            updateRestaurantImage={updateRestaurantImage}
+          /> */}
+        </div>
       </div>
-      <div className='history-details'>
-        <h2>{restaurant?.name}</h2>
-        {notes?.map((note, index) => {
-          return (
-            <HistoryNotes
-              note={note}
-              key={index}
-              restaurant={restaurant}
-              removeNote={removeNote}
-            />
-          )
-        })}
-        <HistoryNoteForm
-          restaurant={restaurant}
-          addNewNote={addNewNote}
-          updateRestaurantImage={updateRestaurantImage}
-        />
-      </div>
+      {collapse ? (
+        <div className='history-note'>
+          <HistoryNoteForm
+            restaurant={restaurant}
+            addNewNote={addNewNote}
+            updateRestaurantImage={updateRestaurantImage}
+          />
+        </div>
+      ) : (
+        ''
+      )}
     </div>
   )
 }

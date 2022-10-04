@@ -29,6 +29,11 @@ const Details = ({
         name: place.name,
         user_id: user.id,
         image: image,
+        address: place?.address,
+        website: place?.website,
+        price_range: place?.price_level,
+        // website:
+        // price_range:
       }),
     })
     let response = await request.json()
