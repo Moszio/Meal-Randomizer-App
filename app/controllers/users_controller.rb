@@ -17,7 +17,7 @@ class UsersController < ApplicationController
             user.destroy
             head :no_content
         else
-            render json: {error: "User not found"}, status: :not_found
+            render json: {errors: "User not found"}, status: :not_found
         end
     end
 
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
         session[:user_id] = user.id
         render json: user, status: :created
         else
-        render json: { error: user.errors.full_messages }, status: :unprocessable_entity
+        render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
         end
     end     
 

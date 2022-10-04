@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import getPlacesData from '../api/index.js'
 import Card from './Restaurant/Card'
 import Details from './Restaurant/Details'
-import './App.css'
+import './Style/App.css'
 
 function LoadingComponent() {
   return <div>Loading...</div>
@@ -56,7 +56,7 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
 
   const handleRandomizerCountUpdate = async () => {
     const counterObj = {
-      total_randomized: user.total_randomized + 1,
+      total_randomized: user?.total_randomized + 1,
     }
     const request = await fetch(`/users/${user.id}`, {
       method: 'PATCH',
@@ -102,7 +102,7 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
             <div className='cards'>
               <Card
                 handleCollapse={handleCollapseForCardAndDetails}
-                place={places}
+                places={places}
                 randomNumber={randomNumber}
               />
             </div>

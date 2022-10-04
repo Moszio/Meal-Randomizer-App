@@ -4,7 +4,7 @@ import SignUp from './component/SignUp.jsx'
 import Navbar from './component/Navbar.jsx'
 import Profile from './component/Profile.jsx.jsx'
 import History from './component/History.jsx'
-import './component/App.css'
+import './component/Style/App.css'
 import { Route, Switch } from 'react-router-dom'
 
 import { useEffect, useState } from 'react'

@@ -43,8 +43,8 @@ const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
   return (
     <div className='history-card'>
       <div className='history-image'>
-        {/* <img src={restaurant.image} alt='' onClick={handleDeleteHistoryCard} /> */}
-        <Slide images={images} />
+        <img src={restaurant.image} alt='' onClick={handleDeleteHistoryCard} />
+        {/* <Slide images={images} onClick={handleDeleteHistoryCard} /> */}
       </div>
       <div className='history-details'>
         <h2>{restaurant?.name}</h2>

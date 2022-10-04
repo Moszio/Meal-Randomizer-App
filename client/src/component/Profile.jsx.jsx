@@ -63,10 +63,7 @@ const Profile = ({ user, updateImage, restaurants }) => {
         </div>
 
         <div className='profile-bottom'>
-          {/* {restaurants?.map((restaurant, index) => {
-            return <ProfileRestVisited key={index} restaurant={restaurant} />
-          })} */}
-          <Badges total={user.total_randomized} />
+          <Badges total={user?.total_randomized} />
         </div>
       </div>
     </div>

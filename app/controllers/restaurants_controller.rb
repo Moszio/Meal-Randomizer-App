@@ -18,6 +18,7 @@ class RestaurantsController < ApplicationController
         render json: restaurant
     end
 
+
     def destroy
         restaurant = Restaurant.find_by!(id: params[:id])
         if restaurant

@@ -4,24 +4,6 @@
   margin: 0; */
 }
 
-.navbar-container {
-  display: flex;
-  /* flex-direction: row-reverse; */
-  justify-content: space-between;
-  align-items: center;
-  background-color: bisque;
-  height: 50px;
-}
-
-.navbar-controllers {
-  display: flex;
-  gap: 5%;
-  justify-content: flex-end;
-}
-
-.application-name {
-}
-
 .home-page {
   height: 100vh;
   width: auto;
@@ -94,33 +76,4 @@
 
 .details-div {
   background-color: gainsboro;
-}
-
-/*Loading*/
-
-.alert {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* border-radius: 20px; */
-}
-
-.alert-div {
-  position: relative;
-  padding: 30px;
-  width: 100%;
-  max-width: 640px;
-  background-color: rgb(238, 174, 77);
-  border-radius: 20px;
-  font-size: 2.5em;
-  font-weight: bold;
-  text-align: center;
-  border: solid rgb(238, 174, 77);
-  border-width: 5px;
 }

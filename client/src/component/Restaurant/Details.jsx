@@ -1,6 +1,6 @@
 import React from 'react'
 import Map from '../Map/Map'
-import './style.css'
+import '../Style/style.css'
 
 const Details = ({
   // setCoordinates,

@@ -1,5 +1,5 @@
 import HistoryCard from './HistoryCard'
-import './Rewards/RewardStyle.css'
+import './Style/History.css'
 import Search from './SearchBar'
 
 const History = ({
