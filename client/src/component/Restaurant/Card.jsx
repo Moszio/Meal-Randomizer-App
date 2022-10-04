@@ -13,17 +13,12 @@ const Card = ({ places, handleCollapse, randomNumber }) => {
   return (
     <div className='restaurant-card-container'>
       <div className='card-picture'>
-        <img
-          src={image}
-          alt='somepicture'
-          style={{ width: '300px', height: '300px' }}
-        />
+        <img src={image} alt='somepicture' />
       </div>
       <div className='card-details'>
         <h2>{place?.name}</h2>
-        <h4>{rating}</h4>
         <Rating name='read-only' value={rating} readOnly />
-        <button onClick={handleCollapse}>click</button>
+        <button onClick={handleCollapse}>Details</button>
       </div>
     </div>
   )

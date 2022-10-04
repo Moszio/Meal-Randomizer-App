@@ -107,14 +107,13 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
               />
             </div>
             <div className='randomizer-container'>
-              <h1
+              <div
                 onClick={() => {
                   handleRandomPlace()
                   handleRandomizerCountUpdate()
                 }}
-              >
-                Randomizer
-              </h1>
+                className='randomizer-spinner'
+              ></div>
             </div>
           </div>
         )

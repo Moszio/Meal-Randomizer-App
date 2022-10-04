@@ -33,6 +33,12 @@
   touch-action: pan-x pan-y;
 }
 
+.card-details button {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+
 @media (max-width: 768px) {
   .mapp {
     width: 300px;

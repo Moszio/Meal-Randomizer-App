@@ -1,11 +1,98 @@
 .cards {
-  background-color: azure;
-  width: min(100% - 2rem, 300px);
-  display: block;
+  max-width: 300px;
+  width: 100%;
+  /* display: block; */
+  /* position: relative; */
+
+  /* box-shadow: var(--box-shadow-1); */
+  border-radius: 5px;
 }
 
 .restaurant-card-container {
+  box-shadow: var(--box-shadow-1);
+  margin: 50px 0 50px 0;
 }
 
 .randomizer-container {
+  position: fixed;
+  width: 15vh;
+  height: 15vh;
+  background-color: rgb(70, 243, 243);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 20px auto;
+  box-shadow: var(--box-shadow-1);
+}
+
+.randomizer-container:hover {
+  background-color: rgb(70, 243, 243);
+  transition-duration: 0.4s;
+  cursor: pointer;
+  /* animation: animate 2s linear infinite; */
+}
+
+.card-picture {
+  width: min(100%, 300px);
+  height: max(100%, 300px);
+}
+
+.card-picture img {
+  border-radius: 5px 5px 0 0;
+  width: min(100%, 300px);
+  max-height: 250px;
+  height: 100%;
+  border-radius: 5px 5px 0 0;
+  /* max-width: 300px;
+  max-height: 300px; */
+
+  object-fit: fill;
+  overflow: hidden;
+}
+
+.card-details button {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* .next-btn:hover {
+  transition-duration: 0.1s;
+  transform: scale(1.2);
+} */
+
+/* @keyframes animate {
+  0% {
+    box-shadow: 0 0 0 0 rgb(61, 213, 230);
+  }
+  40% {
+    box-shadow: 0 0 0 40px rgba(255, 255, 255, 0);
+  }
+  80% {
+    box-shadow: 0 0 0 40px rgba(0, 206, 209, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(0, 206, 209, 0);
+  }
+} */
+
+.randomizer-spinner {
+  margin: auto;
+  border: 10px solid #eaf0f6;
+  border-radius: 50%;
+  /* border-top: 10px solid rgb(70, 243, 243); */
+  width: 100px;
+  height: 100px;
+  /* animation: spinner 4s linear infinite; */
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

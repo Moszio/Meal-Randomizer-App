@@ -21,10 +21,10 @@ code {
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.2);
   --background-image-1: linear-gradient(
     to bottom,
-    #c4fdf5,
-    #8cf8e9,
+    #58edd9,
+    #59f6e1,
     #4ef8e1,
-    #32f5db,
-    #00e4c6
+    #76f5e4,
+    #c0fff7
   );
 }
