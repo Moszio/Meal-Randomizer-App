@@ -6,8 +6,8 @@ const Map = ({ coordinates, handleGetPlacesChange, place }) => {
   // const coordinates1 = { lat: 40.73390079999999, lng: -74.0425728 }
   // console.log('image', place.photo.images.large.url)
   return (
-    <div>
-      <div className='mapp'>
+    <div className='map-container'>
+      <div className='map'>
         <GoogleMapReact
           bootstrapURLKeys={{ key: `${key}` }}
           defaultCenter={coordinates}
@@ -26,7 +26,7 @@ const Map = ({ coordinates, handleGetPlacesChange, place }) => {
             lat={place.latitude}
             lng={place.longitude}
             text='My Marker'
-            style={{ width: '100px', height: '100px' }}
+            // className='marker'
           >
             <img
               src={
@@ -35,7 +35,8 @@ const Map = ({ coordinates, handleGetPlacesChange, place }) => {
                   : 'https://media.istockphoto.com/photos/two-empty-wine-glasses-sitting-in-a-restaurant-on-a-warm-sunny-picture-id1018141890?k=20&m=1018141890&s=612x612&w=0&h=uMDP00MMIhlwQE77EEcoelc2oSKBT_B6avaXqtxgiow='
               }
               alt='restaurant'
-              style={{ width: '50px', height: '50px' }}
+              className='marker'
+              // style={{ width: '50px', height: '50px' }}
             />
           </div>
         </GoogleMapReact>

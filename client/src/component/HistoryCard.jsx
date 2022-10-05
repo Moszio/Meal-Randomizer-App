@@ -64,10 +64,10 @@ const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
               className='icons'
               onClick={() => window.open(restaurant.website, '_blank')}
             >
-              <i class='fa-sharp fa-solid fa-blog'></i>
+              <i className='fa-sharp fa-solid fa-blog'></i>
             </div>
             <div className='icons' onClick={handleCollapse}>
-              <i class='fa-solid fa-book'></i>
+              <i className='fa-solid fa-book'></i>
             </div>
             <div></div>
           </div>

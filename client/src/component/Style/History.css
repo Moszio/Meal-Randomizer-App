@@ -85,13 +85,13 @@
   width: 100%;
   border-radius: 20px;
   margin: 20px auto;
-  border-color: aquamarine;
+  border-color: var(--color-secondary);
 }
 
 .history-note button {
   border-radius: 12px;
   border: none;
-  background-color: aquamarine;
+  background-color: var(--color-secondary);
   font-weight: bold;
 }
 

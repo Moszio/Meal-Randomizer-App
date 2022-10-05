@@ -1,10 +1,12 @@
 import React from 'react'
 import Map from '../Map/Map'
-import '../Style/style.css'
+import '../Style/Details.css'
 import { FaTripadvisor } from 'react-icons/fa'
 import { CgWebsite } from 'react-icons/cg'
 import { AiFillLike } from 'react-icons/ai'
 import { GiReturnArrow } from 'react-icons/gi'
+import { FaPhoneAlt } from 'react-icons/fa'
+import { ImLocation2 } from 'react-icons/im'
 
 const Details = ({
   // setCoordinates,
@@ -61,9 +63,20 @@ const Details = ({
           />
         </div>
         <div className='details-details'>
-          <h5>Ranking {place?.name}</h5>
-          <h5>{place?.price_level}</h5>
-          <h5>{place?.ranking}</h5>
+          <div
+            className='details-elements main'
+            style={{ justifyContent: 'center' }}
+          >
+            <h4>{place?.name}</h4>
+          </div>
+          <div className='details-elements'>
+            <div>{place?.price_level ? 'Price' : null}</div>
+            <div> {place?.price_level}</div>
+          </div>
+          <div className='details-elements'>
+            <div>{place?.ranking ? 'Ranking' : null}</div>
+            <div> {place?.ranking}</div>
+          </div>
           {place?.cuisine?.map(({ name }) => {
             return (
               <h6 key={name} className='chip'>
@@ -72,8 +85,18 @@ const Details = ({
               </h6>
             )
           })}
-          <p>{place?.address}</p>
-          <p>{place?.phone}</p>
+          <div className='details-elements'>
+            <div>
+              <ImLocation2 />
+            </div>
+            <div>{place?.address}</div>
+          </div>
+          <div className='details-elements'>
+            <div>
+              <FaPhoneAlt />
+            </div>
+            <div>{place?.phone}</div>
+          </div>
           <div className='icon-container-maps'>
             <div className='icons' onClick={handleCollapse}>
               <GiReturnArrow />

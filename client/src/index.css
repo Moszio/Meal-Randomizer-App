@@ -14,7 +14,7 @@ code {
 
 :root {
   --color-primary: #000000;
-  --color-secondary: #66fdc1;
+  --color-secondary: rgb(125, 255, 212);
   --color-white: #ffffff;
   --color-orange: #eea32a;
   --color-navbar: #c4fdf5;

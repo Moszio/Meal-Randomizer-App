@@ -79,7 +79,7 @@
   .navbar-controllers-active a {
     margin: 16px 0;
     text-decoration: none;
-    color: var(--color-orange);
+    color: var(--color-primary);
   }
 
   .navbar-controllers-active {
@@ -92,5 +92,6 @@
     width: 100%;
     text-align: center;
     transition: 0.3s;
+    z-index: 30;
   }
 } ;
