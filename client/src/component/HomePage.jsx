@@ -3,6 +3,7 @@ import getPlacesData from '../api/index.js'
 import Card from './Restaurant/Card'
 import Details from './Restaurant/Details'
 import './Style/App.css'
+import Footer from './Footer.jsx'
 
 function LoadingComponent() {
   return <div className='loader'></div>
@@ -98,15 +99,16 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
 
       default:
         return (
-          <div className='cards'>
-            <div>
-              <Card
-                handleCollapse={handleCollapseForCardAndDetails}
-                places={places}
-                randomNumber={randomNumber}
-              />
-            </div>
-            <div className='randomizer-container'>
+          <div>
+            <div className='cards'>
+              <div>
+                <Card
+                  handleCollapse={handleCollapseForCardAndDetails}
+                  places={places}
+                  randomNumber={randomNumber}
+                />
+              </div>
+              {/* <div className='randomizer-container'>
               <div
                 onClick={() => {
                   handleRandomPlace()
@@ -114,6 +116,11 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
                 }}
                 className='randomizer-spinner'
               ></div>
+            </div> */}
+              <Footer
+                handleRandomPlace={handleRandomPlace}
+                handleRandomizerCountUpdate={handleRandomizerCountUpdate}
+              />
             </div>
           </div>
         )

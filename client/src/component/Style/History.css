@@ -32,6 +32,8 @@
   background-color: var(--color-white);
   box-shadow: var(--box-shadow-1);
   border-radius: 5px;
+  /* transform: scale(1.03); */
+  transition: 1.8s;
 }
 
 .history-card {
@@ -104,7 +106,7 @@
   justify-content: space-between;
 }
 
-.notes button {
+.notes input[type='submit'] {
 }
 /*Search Bar*/
 

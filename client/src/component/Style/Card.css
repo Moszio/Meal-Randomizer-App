@@ -1,30 +1,31 @@
 .cards {
   max-width: 300px;
   width: 100%;
-  /* display: block; */
-  /* position: relative; */
-
-  /* box-shadow: var(--box-shadow-1); */
   border-radius: 5px;
 }
 
 .restaurant-card-container {
   box-shadow: var(--box-shadow-1);
-  margin: 50px 0 50px 0;
+  margin: 10vh 0 0 0;
 }
 
 .randomizer-container {
-  position: fixed;
-  width: 15vh;
-  height: 15vh;
+  bottom: 0;
+  left: 0;
+  width: 10vh;
+  height: 10vh;
   background-color: rgb(70, 243, 243);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  margin: 20px auto;
   box-shadow: var(--box-shadow-1);
+  position: fixed;
+  padding: 2em;
+  left: 50%;
+  top: 0%;
+  /* transform: translateY(650%); */
+  transform: translate(-50%, 750%);
 }
 
 .randomizer-container:hover {
@@ -32,6 +33,22 @@
   transition-duration: 0.4s;
   cursor: pointer;
   /* animation: animate 2s linear infinite; */
+}
+.randomizer-spinner {
+  border: 20px solid #eaf0f6;
+  border-radius: 50%;
+  /* border-top: 10px solid rgb(70, 243, 243); */
+  width: 50%;
+  height: 50%;
+  animation: animate 4s linear infinite;
+}
+@keyframes animate2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .card-picture {
@@ -64,35 +81,17 @@
   transform: scale(1.2);
 } */
 
-/* @keyframes animate {
+@keyframes animate {
   0% {
     box-shadow: 0 0 0 0 rgb(61, 213, 230);
   }
   40% {
-    box-shadow: 0 0 0 40px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
   }
   80% {
-    box-shadow: 0 0 0 40px rgba(0, 206, 209, 0);
+    box-shadow: 0 0 0 20px rgba(0, 206, 209, 0);
   }
   100% {
     box-shadow: 0 0 0 rgba(0, 206, 209, 0);
-  }
-} */
-
-.randomizer-spinner {
-  margin: auto;
-  border: 10px solid #eaf0f6;
-  border-radius: 50%;
-  /* border-top: 10px solid rgb(70, 243, 243); */
-  width: 100px;
-  height: 100px;
-  /* animation: spinner 4s linear infinite; */
-}
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }

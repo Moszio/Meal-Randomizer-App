@@ -1,6 +1,10 @@
 import React from 'react'
 import Map from '../Map/Map'
 import '../Style/style.css'
+import { FaTripadvisor } from 'react-icons/fa'
+import { CgWebsite } from 'react-icons/cg'
+import { AiFillLike } from 'react-icons/ai'
+import { GiReturnArrow } from 'react-icons/gi'
 
 const Details = ({
   // setCoordinates,
@@ -57,20 +61,39 @@ const Details = ({
           />
         </div>
         <div className='details-details'>
-          <h1>{place?.name}</h1>
-          <h3>{place?.price_level}</h3>
-          <h4>{place?.ranking}</h4>
+          <h5>Ranking {place?.name}</h5>
+          <h5>{place?.price_level}</h5>
+          <h5>{place?.ranking}</h5>
           {place?.cuisine?.map(({ name }) => {
-            return <h4 key={name}> {name} </h4>
+            return (
+              <h6 key={name} className='chip'>
+                {' '}
+                {name}{' '}
+              </h6>
+            )
           })}
           <p>{place?.address}</p>
           <p>{place?.phone}</p>
-          <h4 onClick={() => window.open(place.web_url, '_blank')}>
-            tripadvisor
-          </h4>
-          <h4 onClick={() => window.open(place.website, '_blank')}>website</h4>
-          <button onClick={handleCollapse}>Back</button>
-          <button onClick={handleAddingLikedRestaurants}>like</button>
+          <div className='icon-container-maps'>
+            <div className='icons' onClick={handleCollapse}>
+              <GiReturnArrow />
+            </div>
+            <div
+              className='icons'
+              onClick={() => window.open(place.web_url, '_blank')}
+            >
+              <FaTripadvisor />
+            </div>
+            <div
+              className='icons'
+              onClick={() => window.open(place.website, '_blank')}
+            >
+              <CgWebsite />
+            </div>
+            <div className='icons' onClick={handleAddingLikedRestaurants}>
+              <AiFillLike />
+            </div>
+          </div>
         </div>
       </div>
 
