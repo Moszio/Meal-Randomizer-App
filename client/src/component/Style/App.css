@@ -13,65 +13,6 @@
   /* justify-content: center; */
 }
 
-/* PROFILE */
-
-.profile-page {
-  /* background-color: aqua; */
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.profile-container {
-  display: flex;
-  flex-direction: column;
-  width: 800px;
-  height: 80%;
-  box-shadow: var(--box-shadow-1);
-  border-radius: 5px;
-  /* background-color: yellow; */
-}
-
-.profile-top {
-  height: 10%;
-  background-color: rgb(247, 235, 220);
-}
-
-.profile-mid {
-  height: 70%;
-  /* background-color: blue; */
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.profile-mid img {
-  width: 100px;
-}
-
-.profile-bottom {
-  height: 20%;
-  /* background-color: violet; */
-  display: flex;
-  justify-content: center;
-  gap: 5%;
-}
-
-.profile-bottom div {
-  width: 100px;
-  height: 100px;
-  background-color: aqua;
-}
-
-.image-div {
-  background-color: beige;
-}
-
-.details-div {
-  background-color: gainsboro;
-}
-
 /*LOADING*/
 
 .loader {

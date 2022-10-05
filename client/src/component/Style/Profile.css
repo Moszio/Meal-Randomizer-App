@@ -1,0 +1,92 @@
+/* PROFILE */
+
+.profile-page {
+  /* background-color: aqua; */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  width: 100%;
+  height: 80%;
+  box-shadow: var(--box-shadow-1);
+  border-radius: 5px;
+  /* background-color: yellow; */
+}
+
+.profile-top {
+  height: 30%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.profile-top img {
+  width: min(100%, 120px);
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.details-div {
+}
+
+/*MID SECTION*/
+
+.profile-mid {
+  height: 30%;
+
+  display: flex;
+}
+
+.profile-mid-sec1 {
+  flex: 1;
+}
+.profile-mid-sec2 {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+/*BOTTOM SECTION*/
+
+.profile-bottom {
+  height: 40%;
+  /* background-color: violet; */
+  display: flex;
+}
+
+.profile-bottom-sec1 {
+  flex: 1;
+}
+.profile-bottom-sec2 {
+  flex: 2;
+  display: flex;
+}
+.profile-bottom-sec2 div {
+  width: min(100% - 2rem, 150px);
+  height: min(100% - 2rem, 150px);
+  margin: auto;
+}
+/*BADGES*/
+
+.grayscale-true {
+  filter: grayscale(0);
+}
+.grayscale-false {
+  filter: grayscale(100%);
+}
+
+.bg-image {
+  background-image: url('https://media.istockphoto.com/vectors/golden-stamp-isolated-on-white-background-luxury-seal-vector-design-vector-id1205550091?k=20&m=1205550091&s=612x612&w=0&h=pFpo_3k1WW02c2rQjfHCXgt00EenuD5qPcQ1RmWZwuI=');
+  background-size: cover;
+  background-position: center;
+}

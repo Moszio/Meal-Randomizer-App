@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import Badges from './Badges.jsx'
+import './Style/Profile.css'
 
 const Profile = ({ user, updateImage, restaurants }) => {
+  const [collapse, setCollapse] = useState(false)
   const [image, setImage] = useState('')
   const history = useHistory()
   const updateProfileImage = (e) => {
@@ -26,31 +28,20 @@ const Profile = ({ user, updateImage, restaurants }) => {
   }
   // console.log(user.username)
 
+  const handleCollapse = () => {
+    setCollapse(!collapse)
+  }
+
   return (
     <div className='profile-page'>
       <div className='profile-container'>
-        <div className='profile-top'>Profile Page</div>
-
-        <div className='profile-mid'>
+        <div className='profile-top'>
           <div className='image-div'>
-            {user ? <h1> Welcome {user.username}</h1> : ''}
             <img
               src={user ? user.image : ''}
               // src='https://media.istockphoto.com/vectors/user-avatar-profile-icon-black-vector-illustration-vector-id1209654046?k=20&m=1209654046&s=612x612&w=0&h=Atw7VdjWG8KgyST8AXXJdmBkzn0lvgqyWod9vTb2XoE='
-              alt='placeholder'
+              alt='placeholde r'
             />
-            <br />
-            {/* <button>Upload Image</button> */}
-            <form onSubmit={updateProfileImage}>
-              <input
-                type='text'
-                id='imageupdate'
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
-              />
-              <input type='submit' />
-            </form>
-            <button onClick={handleDeleteAccount}>Delete accoutn</button>
           </div>
           <div className='details-div'>
             <h4>points earned</h4>
@@ -60,10 +51,43 @@ const Profile = ({ user, updateImage, restaurants }) => {
             <h4>History</h4>
             <h6>{restaurants?.length}</h6>
           </div>
+          <div className='details-div'>
+            <h4 onClick={handleCollapse}>Edit Profile</h4>
+            {collapse ? (
+              <div>
+                <form onSubmit={updateProfileImage}>
+                  <input
+                    type='text'
+                    id='imageupdate'
+                    value={image}
+                    onChange={(e) => setImage(e.target.value)}
+                  />
+                  <input type='submit' />
+                </form>
+                <button onClick={handleDeleteAccount}>Delete accoutn</button>
+              </div>
+            ) : null}
+          </div>
         </div>
-
+        <div className='profile-mid'>
+          <div className='profile-mid-sec1'>
+            {user ? <h1> Welcome {user.username}</h1> : ''}
+            {user ? (
+              <h6>
+                Account created <br />
+                {user.created_at}
+              </h6>
+            ) : (
+              ''
+            )}
+          </div>
+          <div className='profile-mid-sec2'>Badges Earned</div>
+        </div>
         <div className='profile-bottom'>
-          <Badges total={user?.total_randomized} />
+          <div className='profile-bottom-sec1'></div>
+          <div className='profile-bottom-sec2'>
+            <Badges total={user?.total_randomized} />
+          </div>
         </div>
       </div>
     </div>
