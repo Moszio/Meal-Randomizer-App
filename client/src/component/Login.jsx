@@ -34,8 +34,8 @@ const Login = ({ onLogin, user }) => {
   //   console.log('username', username)
 
   return (
-    <div className='login'>
-      <div className='login-div'>
+    <div className='login bg-image2 '>
+      <div className='login-div bg-image3'>
         <form onSubmit={handleSubmit}>
           <label>Username</label>
           <br />

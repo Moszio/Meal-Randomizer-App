@@ -2,6 +2,7 @@
   max-width: 300px;
   width: 100%;
   border-radius: 5px;
+  background-color: #eaf0f6;
 }
 
 .restaurant-card-container {
@@ -14,7 +15,7 @@
   left: 0;
   width: 10vh;
   height: 10vh;
-  background-color: rgb(70, 243, 243);
+  background-color: rgb(125, 255, 212);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -29,7 +30,7 @@
 }
 
 .randomizer-container:hover {
-  background-color: rgb(70, 243, 243);
+  background-color: rgb(125, 255, 212);
   transition-duration: 0.4s;
   cursor: pointer;
   /* animation: animate 2s linear infinite; */
@@ -74,6 +75,7 @@
   border: none;
   border-radius: 5px;
   font-weight: bold;
+  background-color: rgb(125, 255, 212);
 }
 
 /* .next-btn:hover {
@@ -83,7 +85,7 @@
 
 @keyframes animate {
   0% {
-    box-shadow: 0 0 0 0 rgb(61, 213, 230);
+    box-shadow: 0 0 0 0 rgb(27, 163, 118);
   }
   40% {
     box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);

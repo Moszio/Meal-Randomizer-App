@@ -102,11 +102,17 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
           <div>
             <div className='cards'>
               <div>
-                <Card
-                  handleCollapse={handleCollapseForCardAndDetails}
-                  places={places}
-                  randomNumber={randomNumber}
-                />
+                {randomNumber ? (
+                  <Card
+                    handleCollapse={handleCollapseForCardAndDetails}
+                    places={places}
+                    randomNumber={randomNumber}
+                  />
+                ) : (
+                  <div className='welome-message'>
+                    You are a click away from your next Lunch Spot
+                  </div>
+                )}
               </div>
               {/* <div className='randomizer-container'>
               <div
@@ -128,7 +134,7 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
   }
 
   return (
-    <div className='home-page'>
+    <div className='home-page bg-image2'>
       {loading ? <LoadingComponent /> : <VisibleComponent />}
     </div>
   )

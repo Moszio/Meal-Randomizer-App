@@ -24,7 +24,7 @@
   height: 200px;
 }
 .map-container {
-  max-width: 200vh;
+  max-width: 220vh;
   width: 100%;
   z-index: 10;
 }

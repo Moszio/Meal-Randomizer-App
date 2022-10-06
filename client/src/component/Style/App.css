@@ -1,5 +1,5 @@
 * {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Tahoma', sans-serif;
   /* padding: 0;
   margin: 0; */
 }
@@ -33,3 +33,23 @@
     transform: rotate(360deg);
   }
 }
+
+.welome-message {
+  margin: 170px 0;
+}
+
+.bg-image2 {
+  background-image: url('https://img.freepik.com/free-vector/hand-drawn-fast-food-background_52683-21979.jpg?w=2000');
+  background-size: cover;
+  background-position: center;
+}
+.bg-image3 {
+  background-image: url('../../../public/logo2.png');
+  background-size: cover;
+  background-position: center;
+}
+/* .bg-image2 {
+  background-image: url('https://www.pexels.com/photo/1640777/download/');
+  background-size: cover;
+  background-position: center;
+} */

@@ -31,8 +31,8 @@ const SignUp = () => {
 
   console.log('error', errors)
   return (
-    <div className='login'>
-      <div className='login-div'>
+    <div className='login bg-image2'>
+      <div className='login-div bg-image3'>
         <form onSubmit={handleSubmit}>
           <label htmlFor='username'>Username</label>
           <br />
@@ -46,7 +46,7 @@ const SignUp = () => {
           <label htmlFor='password'>Password</label>
           <br />
           <input
-            type='text'
+            type='password'
             id='password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -55,7 +55,7 @@ const SignUp = () => {
           <label htmlFor='password_confirmation'>Confirm Password</label>
           <br />
           <input
-            type='text'
+            type='password'
             id='password_confirmation'
             value={passwordConfirmation}
             onChange={(e) => setPasswordConfirmation(e.target.value)}

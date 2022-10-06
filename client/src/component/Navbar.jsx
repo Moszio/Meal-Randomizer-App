@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import { useState } from 'react'
 import './Style/Navbar.css'
+
 const Navbar = ({ onLogout, user }) => {
   const history = useHistory()
   const [collapse, setCollapse] = useState(false)
@@ -20,7 +21,11 @@ const Navbar = ({ onLogout, user }) => {
     <div className='navbar'>
       <div className='navbar-container'>
         <div className='application-name' onClick={() => history.push('/')}>
-          Launch ROulette
+          <div
+            style={{ width: '40px', height: '40px' }}
+            className='bg-image3'
+          ></div>
+          hereToEat
         </div>
         <div
           className={

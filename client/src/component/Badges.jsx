@@ -6,18 +6,22 @@ const Badges = ({ total }) => {
           total >= 10 ? 'grayscale-true bg-image' : 'grayscale-false bg-image'
         }
       >
-        {' '}
+        "100 random"
       </div>
       <div
         className={
           total >= 50 ? 'grayscale-true bg-image' : 'grayscale-false bg-image'
         }
-      ></div>
+      >
+        "100 random"
+      </div>
       <div
         className={
           total >= 110 ? 'grayscale-true bg-image' : 'grayscale-false bg-image'
         }
-      ></div>
+      >
+        "100 random"
+      </div>
     </>
   )
 

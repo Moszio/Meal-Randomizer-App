@@ -6,6 +6,7 @@ const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
   const [notes, setNotes] = useState([])
   const [images, setImages] = useState([restaurant.image])
   const [collapse, setCollapse] = useState(false)
+  const [popUp, setPopUp] = useState(false)
 
   const handleFetchNote = async () => {
     const request = await fetch(`/restaurants/${restaurant?.id}`)

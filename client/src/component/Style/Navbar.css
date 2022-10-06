@@ -2,7 +2,7 @@
   /* flex-direction: row-reverse; */
   display: flex;
   justify-content: center;
-  background-image: var(--background-image-1);
+  background-color: rgb(204, 255, 238);
   height: 50px;
   width: auto;
 }
@@ -28,7 +28,7 @@
 }
 .navbar-controllers a {
   text-decoration: none;
-  color: var(--color-orange);
+  color: var(--color-primary);
 }
 .navbar-controllers a:hover {
   color: var(--color-primary);
@@ -37,9 +37,12 @@
 }
 
 .application-name {
-  font-size: 1.5rem;
-  font-weight: none;
+  display: flex;
+  font-size: 1.8rem;
+  font-weight: bold;
   text-align: center;
+  letter-spacing: 0.125em;
+  cursor: pointer;
 }
 
 .hamburger {

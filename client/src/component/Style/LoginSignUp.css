@@ -14,20 +14,24 @@
   position: relative;
   padding: 30px;
   width: 100%;
-  max-width: 640px;
-  background-color: rgb(238, 174, 77);
+  max-width: 440px;
+  height: 600px;
+  background-color: var(--color-secondary);
   border-radius: 8px;
-  font-size: 1em;
+  box-shadow: var(--box-shadow-1);
+  font-size: 1.1em;
   font-weight: bold;
   text-align: center;
-  border: solid rgb(238, 174, 77);
-  border-width: 5px;
-  margin: 2rem;
+  /* margin: 2rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-div input {
-  max-width: 640px;
-  width: 80%;
+  max-width: 440px;
+  width: 100%;
 }
 .login-div ul li {
   max-width: 640px;
