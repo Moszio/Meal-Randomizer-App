@@ -41,7 +41,7 @@ function App() {
   }
 
   const searchResult = restaurants?.filter((restaurant) => {
-    return restaurant.name.toLowerCase().includes(search.toLowerCase())
+    return restaurant?.name.toLowerCase().includes(search.toLowerCase())
   })
 
   const handleSetUser = () => {
