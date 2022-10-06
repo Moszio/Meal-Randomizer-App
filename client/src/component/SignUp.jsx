@@ -1,10 +1,13 @@
 import { useState, onLogin } from 'react'
+import { useHistory } from 'react-router-dom'
 
 const SignUp = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('')
   const [passwordConfirmation, setPasswordConfirmation] = useState('')
   const [errors, setErrors] = useState([])
+  const history = useHistory()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -15,12 +18,13 @@ const SignUp = () => {
       },
       body: JSON.stringify({
         username,
+        email,
         password,
         password_confirmation: passwordConfirmation,
       }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then(onLogin)
+        r.json().then(onLogin, history.push('/login'))
       } else {
         r.json().then((errorData) => setErrors(errorData.errors))
       }
@@ -41,6 +45,14 @@ const SignUp = () => {
             id='username'
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+          />
+          <br />
+          <label htmlFor='username'>Email</label>
+          <input
+            type='email'
+            id='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <br />
           <label htmlFor='password'>Password</label>

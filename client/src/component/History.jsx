@@ -12,7 +12,7 @@ const History = ({
 
   return (
     <div className='history-page'>
-      <div className='welcome-message '>WELCOME MESSAGE</div>
+      <div className='welcome-message '>The places you realy liked.</div>
       <Search setSearch={setSearch} />
       <div className='history-container'>
         {searchResult?.map((restaurant, index) => {

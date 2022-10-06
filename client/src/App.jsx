@@ -44,6 +44,10 @@ function App() {
     return restaurant.name.toLowerCase().includes(search.toLowerCase())
   })
 
+  const handleSetUser = () => {
+    setUser(false)
+  }
+
   return (
     <div>
       <Navbar onLogout={setUser} user={user} />
@@ -66,6 +70,7 @@ function App() {
             user={user}
             updateImage={updateImage}
             restaurants={restaurants}
+            handleSetUser={handleSetUser}
           ></Profile>
         </Route>
         <Route exact path='/history'>

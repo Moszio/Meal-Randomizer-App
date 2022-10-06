@@ -35,7 +35,18 @@
 }
 
 .welome-message {
-  margin: 170px 0;
+  margin-top: 20vh;
+  font-size: 5em;
+  animation: up-down 1s infinite alternate;
+}
+
+@keyframes up-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(8px);
+  }
 }
 
 .bg-image2 {

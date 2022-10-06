@@ -12,16 +12,17 @@
 
 .login-div {
   position: relative;
-  padding: 30px;
+  /* padding: 10px; */
   width: 100%;
   max-width: 440px;
   height: 600px;
   background-color: var(--color-secondary);
   border-radius: 8px;
   box-shadow: var(--box-shadow-1);
-  font-size: 1.1em;
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: none;
   text-align: center;
+  letter-spacing: 2px;
   /* margin: 2rem; */
   display: flex;
   flex-direction: column;
@@ -32,6 +33,28 @@
 .login-div input {
   max-width: 440px;
   width: 100%;
+  border-radius: 10px;
+  border: none;
+  border: 2px solid rgb(125, 255, 212);
+  margin: 10px 7px 10px 7px;
+  text-align: start;
+}
+.login-div button {
+  border-radius: 10px;
+  background-color: inherit;
+  border: 2px solid var(--color-lightGreen);
+  text-align: start;
+  max-width: 200px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: none;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.login-div button:hover {
+  transform: scale(1.03);
+  transition-duration: 0.2s;
 }
 .login-div ul li {
   max-width: 640px;

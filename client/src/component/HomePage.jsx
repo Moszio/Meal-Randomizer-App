@@ -4,6 +4,7 @@ import Card from './Restaurant/Card'
 import Details from './Restaurant/Details'
 import './Style/App.css'
 import Footer from './Footer.jsx'
+import { FaHandPointDown } from 'react-icons/fa'
 
 function LoadingComponent() {
   return <div className='loader'></div>
@@ -110,19 +111,10 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
                   />
                 ) : (
                   <div className='welome-message'>
-                    You are a click away from your next Lunch Spot
+                    <FaHandPointDown />
                   </div>
                 )}
               </div>
-              {/* <div className='randomizer-container'>
-              <div
-                onClick={() => {
-                  handleRandomPlace()
-                  handleRandomizerCountUpdate()
-                }}
-                className='randomizer-spinner'
-              ></div>
-            </div> */}
               <Footer
                 handleRandomPlace={handleRandomPlace}
                 handleRandomizerCountUpdate={handleRandomizerCountUpdate}

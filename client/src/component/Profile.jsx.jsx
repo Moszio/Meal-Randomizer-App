@@ -4,9 +4,10 @@ import Badges from './Badges.jsx'
 import './Style/Profile.css'
 import { FiSettings } from 'react-icons/fi'
 
-const Profile = ({ user, updateImage, restaurants }) => {
+const Profile = ({ user, updateImage, restaurants, handleSetUser }) => {
   const [collapse, setCollapse] = useState(false)
   const [image, setImage] = useState('')
+
   const history = useHistory()
   const updateProfileImage = (e) => {
     e.preventDefault()
@@ -25,6 +26,7 @@ const Profile = ({ user, updateImage, restaurants }) => {
     await fetch(`/users/${user.id}`, {
       method: 'DELETE',
     })
+    handleSetUser()
     history.push('/login')
   }
   // console.log(user.username)
@@ -66,16 +68,18 @@ const Profile = ({ user, updateImage, restaurants }) => {
             </h4>
             {collapse ? (
               <div className='profile-dropdown'>
+                {' '}
                 <form onSubmit={updateProfileImage}>
                   <input
                     type='text'
                     id='imageupdate'
+                    placeholder='Image'
                     value={image}
                     onChange={(e) => setImage(e.target.value)}
                   />
-                  <input type='submit' />
+                  <input type='submit' value='Update' />
                 </form>
-                <button onClick={handleDeleteAccount}>Delete accoutn</button>
+                <button onClick={handleDeleteAccount}>Delete Account</button>
               </div>
             ) : null}
           </div>

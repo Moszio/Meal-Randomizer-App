@@ -51,29 +51,37 @@
   display: flex;
 }
 .profile-dropdown {
-  background-color: rgb(4, 138, 255);
-  width: min(100px 10%);
-  height: 200px;
+  background-color: rgb(250, 250, 250);
+  width: max(200px, 70%);
+  /* height: 200px; */
   display: flex;
   flex-direction: column;
   gap: 2px;
   border-radius: 5px;
+  text-align: center;
 }
-.profile-dropdown form {
+.profile-dropdown form,
+input {
   display: flex;
   flex-direction: column;
-  max-width: 100px;
-  width: 100%;
-  border-radius: 20px;
-  margin: 10px 10px;
+  margin: 0.25em 0.25em;
+  border-radius: 10px;
 }
+.profile-dropdown input {
+  border: 2px solid rgb(125, 255, 212);
+}
+
+/* .profile-dropdown form,
+input[type='submit'] {
+  margin: auto;
+} */
+
 .profile-dropdown button {
-  display: flex;
-  flex-direction: column;
-  max-width: 100px;
-  width: 100%;
-  border-radius: 20px;
-  margin: 10px 10px;
+  border-radius: 10px;
+  border: none;
+  border: 2px solid rgb(125, 255, 212);
+  margin: 20px 7px 10px 7px;
+  text-align: start;
 }
 
 /* .profile-dropdown input {
@@ -129,13 +137,40 @@
 
 .grayscale-true {
   filter: grayscale(0);
+  border: 2px solid var(--color-lightGreen);
+  border-radius: 10px;
 }
 .grayscale-false {
   filter: grayscale(100%);
+  border: 2px solid var(--color-lightGreen);
+  border-radius: 10px;
 }
 
 .bg-image {
-  background-image: url('https://media.istockphoto.com/vectors/golden-stamp-isolated-on-white-background-luxury-seal-vector-design-vector-id1205550091?k=20&m=1205550091&s=612x612&w=0&h=pFpo_3k1WW02c2rQjfHCXgt00EenuD5qPcQ1RmWZwuI=');
+  background-image: url('../../../public/badge.png');
   background-size: cover;
   background-position: center;
+}
+
+@media (max-width: 768px) {
+  .profile-bottom-sec1 {
+    display: none;
+  }
+  .profile-mid-sec2 {
+    z-index: 10;
+  }
+  .profile-mid-sec1 {
+    z-index: 20;
+    margin: 0 auto;
+
+    flex: 2;
+  }
+  .profile-mid {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .profile-dropdown {
+  }
 }
