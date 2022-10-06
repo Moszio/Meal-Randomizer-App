@@ -10,7 +10,7 @@ const Navbar = ({ onLogout, user }) => {
   const handleLogout = () => {
     fetch('/logout', {
       method: 'DELETE',
-    }).then(() => onLogout(null), history.push('/'))
+    }).then(() => onLogout(null), history.push('/login'))
   }
 
   const handleCollapse = () => {
@@ -20,7 +20,12 @@ const Navbar = ({ onLogout, user }) => {
   return (
     <div className='navbar'>
       <div className='navbar-container'>
-        <div className='application-name' onClick={() => history.push('/')}>
+        <div
+          className='application-name'
+          onClick={() => {
+            user ? history.push('/') : history.push('/login')
+          }}
+        >
           <div
             style={{ width: '40px', height: '40px' }}
             className='bg-image3'
@@ -50,7 +55,7 @@ const Navbar = ({ onLogout, user }) => {
                 <div>Profile</div>
               </Link>
               <Link to='/history'>
-                <div>History</div>
+                <div>Favourites</div>
               </Link>
               <div onClick={handleLogout}>Logout</div>
             </>

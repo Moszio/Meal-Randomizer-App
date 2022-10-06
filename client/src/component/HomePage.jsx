@@ -118,6 +118,7 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
               <Footer
                 handleRandomPlace={handleRandomPlace}
                 handleRandomizerCountUpdate={handleRandomizerCountUpdate}
+                user={user}
               />
             </div>
           </div>

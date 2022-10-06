@@ -44,6 +44,7 @@ const Details = ({
     })
     let response = await request.json()
     addNewRestaurantToHistory(response)
+    alert(`${place.name} is added to your favourites!`)
     // if (response.ok) {
     //   console.log(response)
     // } else console.log('clicke')
