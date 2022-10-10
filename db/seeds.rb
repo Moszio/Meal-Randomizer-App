@@ -19,8 +19,6 @@ User.create(username: "Andor", password_digest: "123", image: "https://images.un
 User.create(username: "Bob", password_digest: "asd", image: nil, email: nil, total_randomized: 0)
 
 
-#t.integer "user_id"
-#t.integer "restaurant_id"
 puts "Seeding Restaurants"
 
 restaurant_1 = Restaurant.create!(name: "Chipotle" ,  price_range: "$")
