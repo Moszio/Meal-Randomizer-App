@@ -16,8 +16,8 @@ Where to eat is a restaurant randomizer application that allows users to get a l
   npm install --prefix client
 
 To launch the application in your terminal:
-  foreman start -f Procfile.dev
-  or
+  foreman start -f Procfile.dev (this allows both backend and frontend server to run in 1 window)
+  or 
   npm start 
   rails s
   
