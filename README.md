@@ -5,10 +5,10 @@
 
 Where to eat is a restaurant randomizer application that allows users to get a lunch or dinner idea with just a click of a button.
 
-- As I was sdutying or I was in office It was always hard to figure out where should I have my lunch, so I thought why there isnt an application that give me an idea for a lunch destination in a simple and easy way.
-- I created this project to challenge my skills and to perhaps create something others can use and make their life a pitch easier.
+- As I was sdutying or I was in office It was always hard to figure out where should I have my lunch, so I thought why there isn't an application that give me an idea for a lunch destination in a simple and easy way.
+- I created this project to challenge my skills and to perhaps create something others can use and make their life a bit easier.
 - My application definitely solves the problem of putting too mch time into searching lunch locations.
-- During the create of the application I learned how to best connect front and backend, use new technologies like Redux.
+- During the development of the application I learned how to best connect front and backend, use new technologies like Redux.
 
 ## Installation
 
