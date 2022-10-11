@@ -4,5 +4,4 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :restaurants
 
-  # has_many :restaurants, serializer: VisitationSerializer
 end

@@ -25,13 +25,10 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
     )
   }, [])
 
-  // console.log('coordinate', coordinates)
-  // console.log('places', places)
   useEffect(() => {
     setLoading(true)
     getPlacesData(coordinates.lat, coordinates.lng)
       .then((data) => {
-        // console.log(data)
         if (!data) {
           setPlaces([])
         } else setPlaces(data)
@@ -42,19 +39,6 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
         setLoading(false)
       })
   }, [coordinates])
-  // console.log('places', places)
-
-  // const handleGetPlacesChange = (coordinates) => {
-  //   getPlacesData(coordinates.lat, coordinates.lng)
-  //     .then((data) => {
-  //       if (!data) {
-  //         setPlaces([])
-  //       } else setPlaces(data)
-  //     })
-  //     .catch(() => {
-  //       setPlaces([])
-  //     })
-  // }
 
   const handleRandomizerCountUpdate = async () => {
     const counterObj = {
@@ -74,7 +58,6 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
   const handleRandomPlace = () => {
     const randomNumber = Math.floor(Math.random() * places?.length)
     setRandomNumber(randomNumber)
-    // setCollapse(true)
   }
 
   const handleCollapseForCardAndDetails = () => {
@@ -87,10 +70,8 @@ const HomePage = ({ user, addNewRestaurantToHistory, updateCount }) => {
         return (
           <Details
             setCoordinates={setCoordinates}
-            //   setBounds={setBounds}
             coordinates={coordinates}
             handleCollapse={handleCollapseForCardAndDetails}
-            // handleGetPlacesChange={handleGetPlacesChange}
             places={places}
             randomNumber={randomNumber}
             user={user}

@@ -37,15 +37,6 @@ const Navbar = ({ onLogout, user }) => {
             collapse ? 'navbar-controllers-active' : 'navbar-controllers'
           }
         >
-          {/* <Link to='/'>
-            <div>Home</div>
-          </Link>
-          <Link to='/profile'>
-            <div>Profile</div>
-          </Link>
-          <Link to='/history'>
-            <div>History</div>
-          </Link> */}
           {user ? (
             <>
               <Link to='/'>

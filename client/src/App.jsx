@@ -81,9 +81,6 @@ function App() {
             setSearch={setSearch}
           />
         </Route>
-        {/* <Route exact path='/details'>
-          <Details user={user} />
-        </Route> */}
       </Switch>
     </div>
   )

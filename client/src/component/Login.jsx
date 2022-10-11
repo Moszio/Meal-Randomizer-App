@@ -25,14 +25,6 @@ const Login = ({ onLogin, user }) => {
     })
   }
 
-  //   const handleLogout = () => {
-  //     fetch('/logout', {
-  //       method: 'DELETE',
-  //     }).then(() => onLogout({}))
-  //   }
-
-  //   console.log('username', username)
-
   return (
     <div className='login bg-image2 '>
       <div className='login-div bg-image3'>
@@ -59,8 +51,7 @@ const Login = ({ onLogin, user }) => {
           <br />
           <button type='submit'>Login</button>
         </form>
-        {/* <button onClick={handleLogout}>Logout</button> */}
-        {/* {user ? <h1> Welcome {user.username}</h1> : null} */}
+
         {errors.length > 0 ? (
           <ul style={{ color: 'red' }}>
             <li>{errors}</li>

@@ -15,16 +15,6 @@ class NotesController < ApplicationController
         end
     end
 
-    # def update
-    #     note = Note.find_by!(id: params[:id])
-    #     if note 
-    #         note.update!(note: params[:note])
-    #         render json: note
-    #     else
-    #         note json: { error: "Note not found!"}, status: :not_found
-    #     end
-
-    # end
 
 
 

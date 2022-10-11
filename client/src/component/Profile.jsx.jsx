@@ -29,7 +29,6 @@ const Profile = ({ user, updateImage, restaurants, handleSetUser }) => {
     handleSetUser()
     history.push('/login')
   }
-  // console.log(user.username)
 
   const handleCollapse = () => {
     setCollapse(!collapse)

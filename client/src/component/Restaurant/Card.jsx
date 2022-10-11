@@ -8,7 +8,6 @@ const Card = ({ places, handleCollapse, randomNumber }) => {
   const image = place?.photo
     ? place?.photo?.images.large.url
     : 'https://media.istockphoto.com/photos/two-empty-wine-glasses-sitting-in-a-restaurant-on-a-warm-sunny-picture-id1018141890?k=20&m=1018141890&s=612x612&w=0&h=uMDP00MMIhlwQE77EEcoelc2oSKBT_B6avaXqtxgiow='
-  // console.log('num', place)
 
   return (
     <div className='restaurant-card-container'>
