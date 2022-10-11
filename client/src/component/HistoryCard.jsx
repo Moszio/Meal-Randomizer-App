@@ -24,8 +24,6 @@ const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
     setCollapse(!collapse)
   }
 
-  // console.log('check', restaurant.id)
-
   useEffect(() => {
     handleFetchNote()
   }, [])
@@ -54,7 +52,6 @@ const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
             alt=''
             onClick={handleDeleteHistoryCard}
           />
-          {/* <Slide images={images} onClick={handleDeleteHistoryCard} /> */}
         </div>
         <div className='history-details'>
           <h2>{restaurant?.name}</h2>
@@ -71,12 +68,6 @@ const HistoryCard = ({ restaurant, removeRestaurantFromHistory }) => {
             </div>
             <div></div>
           </div>
-
-          {/* <HistoryNoteForm
-            restaurant={restaurant}
-            addNewNote={addNewNote}
-            updateRestaurantImage={updateRestaurantImage}
-          /> */}
         </div>
       </div>
       {collapse ? (

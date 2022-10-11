@@ -3,8 +3,7 @@ import config from '../../config'
 
 const Map = ({ coordinates, handleGetPlacesChange, place }) => {
   const key = config.MY_API_TOKEN
-  // const coordinates1 = { lat: 40.73390079999999, lng: -74.0425728 }
-  // console.log('image', place.photo.images.large.url)
+
   return (
     <div className='map-container'>
       <div className='map'>
@@ -13,21 +12,8 @@ const Map = ({ coordinates, handleGetPlacesChange, place }) => {
           defaultCenter={coordinates}
           center={coordinates}
           defaultZoom={14}
-          // onChange={(e) => {
-          //   console.log('ON CHANGE', e)
-          //   // setCoordinates({ lat: e.center.lat, lng: e.center.lng })
-          //   handleGetPlacesChange({
-          //     ne: e.marginBounds.ne,
-          //     sw: e.marginBounds.sw,
-          //   })
-          // }}
         >
-          <div
-            lat={place.latitude}
-            lng={place.longitude}
-            text='My Marker'
-            // className='marker'
-          >
+          <div lat={place.latitude} lng={place.longitude} text='My Marker'>
             <img
               src={
                 place.photo
@@ -36,7 +22,6 @@ const Map = ({ coordinates, handleGetPlacesChange, place }) => {
               }
               alt='restaurant'
               className='marker'
-              // style={{ width: '50px', height: '50px' }}
             />
           </div>
         </GoogleMapReact>

@@ -9,8 +9,6 @@ import { FaPhoneAlt } from 'react-icons/fa'
 import { ImLocation2 } from 'react-icons/im'
 
 const Details = ({
-  // setCoordinates,
-  // setBounds,
   coordinates,
   places,
   handleCollapse,
@@ -38,16 +36,11 @@ const Details = ({
         address: place?.address,
         website: place?.website,
         price_range: place?.price_level,
-        // website:
-        // price_range:
       }),
     })
     let response = await request.json()
     addNewRestaurantToHistory(response)
     alert(`${place.name} is added to your favourites!`)
-    // if (response.ok) {
-    //   console.log(response)
-    // } else console.log('clicke')
   }
 
   return (
@@ -122,8 +115,6 @@ const Details = ({
       </div>
 
       <Map
-        // setCoordinates={setCoordinates}
-        // setBounds={setBounds}
         coordinates={coordinates}
         handleGetPlacesChange={handleGetPlacesChange}
         place={place}

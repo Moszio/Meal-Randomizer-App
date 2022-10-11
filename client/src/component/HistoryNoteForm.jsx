@@ -18,12 +18,7 @@ const HistoryNoteForm = ({ restaurant, addNewNote }) => {
     let response = await request.json()
     addNewNote(response)
     setNewNotes([])
-    // if (response.ok) {
-    //   console.log('successful')
-    // } else console.log('error')
   }
-
-  //   console.log(restaurant.id)
 
   return (
     <form onSubmit={handlePostNewNote}>

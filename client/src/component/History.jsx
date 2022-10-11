@@ -8,8 +8,6 @@ const History = ({
   searchResult,
   setSearch,
 }) => {
-  // console.log('test', restaurants)
-
   return (
     <div className='history-page'>
       <div className='welcome-message '>The places you realy liked.</div>
