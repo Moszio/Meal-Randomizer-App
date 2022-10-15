@@ -22,11 +22,25 @@ rails s
 
 ## Use
 
+As a new user you can create an account or if you have an account you can log in. The website is secure as it is using Byrpt for securing password information.
 ![LoginPage](public/LoginPage.png)
+
+Home page is simple easy to navigate
 ![HomePage](public/HomePage.png)
+
+Just click on a button and the system will throw out a random restaurant based on you location.
 ![RandomizerPage](public/RandomizerPage.png)
+
+If the user likes the restaurant they can click on details. Under details will take them to a new page where they can see the location of the restaurant with some details including type/ price range/ address etc.
+The user can also check any reviews or the website of the restaurant for menu details.
+The user can also add the restaurant to their favoruites for future reference with the appropriate button.
 ![MapPage](public/MapPage.png)
+
+Under Profile page the user can see some details including how many times they used randomizer. How many badge they earned or even just uploading their picture or deleting their account if they no longer want to use it.
 ![ProfilePage](public/ProfilePage.png)
+
+Under Favourite Page the user can view all the restaurants they liked before. They can also add/ remove notes if they like.
+They can also check the picture of the restaurant or even just check the website of the place.
 ![Favouritepage](public/FavouritePage.png)
 
 ## Credits
