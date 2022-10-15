@@ -1,4 +1,3 @@
-
 # <WhereToEat>
 
 ## Description
@@ -12,15 +11,23 @@ Where to eat is a restaurant randomizer application that allows users to get a l
 
 ## Installation
 
-  bundle install
-  npm install --prefix client
+bundle install
+npm install --prefix client
 
 To launch the application in your terminal:
-  foreman start -f Procfile.dev (this allows both backend and frontend server to run in 1 window)
-  or 
-  npm start 
-  rails s
-  
+foreman start -f Procfile.dev (this allows both backend and frontend server to run in 1 window)
+or
+npm start
+rails s
+
+## Use
+
+![LoginPage](public/LoginPage.png)
+![HomePage](public/HomePage.png)
+![RandomizerPage](public/RandomizerPage.png)
+![MapPage](public/MapPage.png)
+![ProfilePage](public/ProfilePage.png)
+![Favouritepage](public/FavouritePage.png)
 
 ## Credits
 
@@ -28,25 +35,25 @@ NPM packages:
 https://www.npmjs.com/package/googleapis
 https://www.npmjs.com/package/google-map-react
 https://react-redux.js.org/
-  
+
 Additional Gems:
 https://rubygems.org/gems/foreman/versions/0.87.2
 
-External API from 
+External API from
 https://rapidapi.com/
 
 ## Technologies
 
-  Rails 7.0.4
-  React 18.2.0
-  Redux 4.2.0
-  
-  ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
-  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-  ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
-  ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-  ![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
-  ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white)
+Rails 7.0.4
+React 18.2.0
+Redux 4.2.0
+
+![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white)
 
 ## Features
 
