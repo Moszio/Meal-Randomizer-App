@@ -10,7 +10,7 @@ const History = ({
 }) => {
   return (
     <div className='history-page'>
-      <div className='welcome-message '>The places you realy liked.</div>
+      <div className='welcome-message '>Favorite Places</div>
       <Search setSearch={setSearch} />
       <div className='history-container'>
         {searchResult?.map((restaurant, index) => {

@@ -41,7 +41,7 @@ Under Profile page the user can see some details including how many times they u
 
 Under Favourite Page the user can view all the restaurants they liked before. They can also add/ remove notes if they like.
 They can also check the picture of the restaurant or even just check the website of the place.
-![Favouritepage](public/FavouritePage.png)
+![Favouritepage](public/FavoritePage.png)
 
 ## Credits
 
