@@ -16,7 +16,7 @@ const Navbar = ({ onLogout, user }) => {
   const handleCollapse = () => {
     setCollapse(!collapse)
   }
-
+  console.log('TESTTTTTTTTTTTTTT')
   return (
     <div className='navbar'>
       <div className='navbar-container'>

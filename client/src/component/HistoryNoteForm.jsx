@@ -19,7 +19,7 @@ const HistoryNoteForm = ({ restaurant, addNewNote }) => {
     addNewNote(response)
     setNewNotes([])
   }
-
+  console.log('TESTTTTTTTTTTTTTTT')
   return (
     <form onSubmit={handlePostNewNote}>
       <label htmlFor='notes'> Add notes here</label>
