@@ -22,7 +22,7 @@
   border-top: 9px solid var(--color-secondary);
   width: 100px;
   height: 100px;
-  animation: spinner 6s linear infinite;
+  animation: spinner 5s linear infinite;
 }
 
 @keyframes spinner {
