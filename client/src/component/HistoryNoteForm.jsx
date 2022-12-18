@@ -30,7 +30,6 @@ const HistoryNoteForm = ({ restaurant, addNewNote }) => {
         value={newNotes}
         onChange={(e) => setNewNotes(e.target.value)}
       />
-      <button>Submit</button>
     </form>
   )
 }
