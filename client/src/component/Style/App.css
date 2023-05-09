@@ -20,7 +20,7 @@
   border: 10px solid #eaf0f6;
   border-radius: 50%;
   border-top: 8px solid var(--color-secondary);
-  width: 101px;
+  width: 100px;
   height: 100px;
   animation: spinner 5s linear infinite;
 }
