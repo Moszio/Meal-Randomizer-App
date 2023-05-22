@@ -36,7 +36,7 @@ The user can also check any reviews or the website of the restaurant for menu de
 The user can also add the restaurant to their favoruites for future reference with the appropriate button.
 ![MapPage](public/MapPage.png)
 
-Under Profile page the user can see some details including how many times they used randomizer. How many badge they earned or even just uploading their picture or deleting their account if they no longer want to use it.
+Under Profile page the user can see some details including how many times they used randomizer. How many badge they earned or even just uploading their picture or deleting their account if they no longer want to use it..
 ![ProfilePage](public/ProfilePage.png)
 
 Under Favourite Page the user can view all the restaurants they liked before. They can also add/ remove notes if they like.
